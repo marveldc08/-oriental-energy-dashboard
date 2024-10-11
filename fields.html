@@ -10,6 +10,8 @@
   <link rel="shortcut icon" href="./img/svg/logo.svg" type="image/x-icon">
   <!-- Custom styles -->
   <link rel="stylesheet" href="./css/style.min.css">
+  <link rel="stylesheet" href="./css/customs.css">
+
 </head>
 
 <body>
@@ -275,96 +277,65 @@
     <!-- ! Main -->
     <main class="main users chart-page" id="skip-target">
       <div class="container">
-        <h2 class="main-title">Dashboard</h2>
-        <div class="row stat-cards">
-          <div class="col-md-6 col-xl-3">
-            <article class="stat-cards-item">
-              <div class="stat-cards-icon primary">
-                <i data-feather="bar-chart-2" aria-hidden="true"></i>
-              </div>
-              <div class="stat-cards-info">
-                <p class="stat-cards-info__num">1478 286</p>
-                <p class="stat-cards-info__title">Total visits</p>
-                <p class="stat-cards-info__progress">
-                  <span class="stat-cards-info__profit success">
-                    <i data-feather="trending-up" aria-hidden="true"></i>4.07%
-                  </span>
-                  Last month
-                </p>
-              </div>
-            </article>
-          </div>
-          <div class="col-md-6 col-xl-3">
-            <article class="stat-cards-item">
-              <div class="stat-cards-icon warning">
-                <i data-feather="file" aria-hidden="true"></i>
-              </div>
-              <div class="stat-cards-info">
-                <p class="stat-cards-info__num">1478 286</p>
-                <p class="stat-cards-info__title">Total visits</p>
-                <p class="stat-cards-info__progress">
-                  <span class="stat-cards-info__profit success">
-                    <i data-feather="trending-up" aria-hidden="true"></i>0.24%
-                  </span>
-                  Last month
-                </p>
-              </div>
-            </article>
-          </div>
-          <div class="col-md-6 col-xl-3">
-            <article class="stat-cards-item">
-              <div class="stat-cards-icon purple">
-                <i data-feather="file" aria-hidden="true"></i>
-              </div>
-              <div class="stat-cards-info">
-                <p class="stat-cards-info__num">1478 286</p>
-                <p class="stat-cards-info__title">Total visits</p>
-                <p class="stat-cards-info__progress">
-                  <span class="stat-cards-info__profit danger">
-                    <i data-feather="trending-down" aria-hidden="true"></i>1.64%
-                  </span>
-                  Last month
-                </p>
-              </div>
-            </article>
-          </div>
-          <div class="col-md-6 col-xl-3">
-            <article class="stat-cards-item">
-              <div class="stat-cards-icon success">
-                <i data-feather="feather" aria-hidden="true"></i>
-              </div>
-              <div class="stat-cards-info">
-                <p class="stat-cards-info__num">1478 286</p>
-                <p class="stat-cards-info__title">Total visits</p>
-                <p class="stat-cards-info__progress">
-                  <span class="stat-cards-info__profit warning">
-                    <i data-feather="trending-up" aria-hidden="true"></i>0.00%
-                  </span>
-                  Last month
-                </p>
-              </div>
-            </article>
-          </div>
+        <h2 class="main-title">Fields</h2>
+        <!-- Button to open the modal -->
+        <div class="modbtn">
+            <button id="openModalBtn">
+               <p>Create</p>
+             <img src="../img/svg/Bulk/plus.svg" alt="" srcset="">
+            </button>
         </div>
+
+         <!-- Modal structure -->
+         <div id="myModal" class="modal">
+            <div class="modal-content">
+                  <!-- Close button -->
+                  <span class="close">&times;</span>
+
+                  <!-- Form Title -->
+                  <h2>Create New Entry</h2>
+
+                  <!-- Form Fields -->
+                  <form>
+                     <!-- Field Name Input -->
+                     <div class="input-group">
+                        <label for="fieldName">Field Name</label>
+                        <input type="text" id="fieldName" name="fieldName" placeholder="Enter field name" required>
+                        <span class="error-message">Field name already exists</span>
+                        <!-- <input type="checkbox" id="validateCheck">
+                        <label for="validateCheck" class="checkmark">✔</label> -->
+                     </div>
+
+                     <!-- Description Text Area -->
+                     <div class="input-group">
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" placeholder="Enter description" required></textarea>
+                     </div>
+
+                     <!-- Action Buttons -->
+                     <div class="button-group">
+                        <button type="button" class="cancel-btn">Cancel</button>
+                        <button type="submit" class="create-btn">Create</button>
+                     </div>
+                  </form>
+            </div>
+         </div>
         <div class="row">
           <div class="col-lg-9">
-            <div class="chart">
-              <canvas id="myChart" aria-label="Site statistics" role="img"></canvas>
-            </div>
             <div class="users-table table-wrapper">
               <table class="posts-table">
                 <thead>
                   <tr class="users-table-info">
                     <th>
                       <label class="users-table__checkbox ms-20">
-                        <input type="checkbox" class="check-all">Thumbnail
+                        <input type="checkbox" class="check-all">S/N
                       </label>
                     </th>
-                    <th>Title</th>
-                    <th>Author</th>
+                    <th>Name</th>
+                    <!-- <th>Author</th> -->
                     <th>Status</th>
-                    <th>Date</th>
-                    <th>Action</th>
+                    <th>Number of  Wells</th>
+                    <!-- <th>Action</th> -->
                   </tr>
                 </thead>
                 <tbody>
@@ -373,22 +344,22 @@
                       <label class="users-table__checkbox">
                         <input type="checkbox" class="check">
                         <div class="categories-table-img">
-                          <picture><source srcset="./img/categories/01.webp" type="image/webp"><img src="./img/categories/01.jpg" alt="category"></picture>
+                          <p>1</p>
                         </div>
                       </label>
                     </td>
                     <td>
-                      Starting your traveling blog with Vasco
+                       Vasco
                     </td>
-                    <td>
+                    <!-- <td>
                       <div class="pages-table-img">
                         <picture><source srcset="./img/avatar/avatar-face-04.webp" type="image/webp"><img src="./img/avatar/avatar-face-04.png" alt="User Name"></picture>
                         Jenny Wilson
                       </div>
-                    </td>
+                    </td> -->
                     <td><span class="badge-pending">Pending</span></td>
-                    <td>17.04.2021</td>
-                    <td>
+                    <td>17</td>
+                    <!-- <td>
                       <span class="p-relative">
                         <button class="dropdown-btn transparent-btn" type="button" title="More info">
                           <div class="sr-only">More info</div>
@@ -400,29 +371,29 @@
                           <li><a href="##">Trash</a></li>
                         </ul>
                       </span>
-                    </td>
+                    </td> -->
                   </tr>
                   <tr>
                     <td>
                       <label class="users-table__checkbox">
                         <input type="checkbox" class="check">
                         <div class="categories-table-img">
-                          <picture><source srcset="./img/categories/02.webp" type="image/webp"><img src="./img/categories/02.jpg" alt="category"></picture>
+                           <p>1</p>
                         </div>
                       </label>
                     </td>
                     <td>
-                      Start a blog to reach your creative peak
+                      peak
                     </td>
-                    <td>
+                    <!-- <td>
                       <div class="pages-table-img">
                         <picture><source srcset="./img/avatar/avatar-face-03.webp" type="image/webp"><img src="./img/avatar/avatar-face-03.png" alt="User Name"></picture>
                         Annette Black
                       </div>
-                    </td>
+                    </td> -->
                     <td><span class="badge-pending">Pending</span></td>
-                    <td>23.04.2021</td>
-                    <td>
+                    <td>23</td>
+                    <!-- <td>
                       <span class="p-relative">
                         <button class="dropdown-btn transparent-btn" type="button" title="More info">
                           <div class="sr-only">More info</div>
@@ -434,29 +405,29 @@
                           <li><a href="##">Trash</a></li>
                         </ul>
                       </span>
-                    </td>
+                    </td> -->
                   </tr>
                   <tr>
                     <td>
                       <label class="users-table__checkbox">
                         <input type="checkbox" class="check">
                         <div class="categories-table-img">
-                          <picture><source srcset="./img/categories/03.webp" type="image/webp"><img src="./img/categories/03.jpg" alt="category"></picture>
+                           <p>1</p>
                         </div>
                       </label>
                     </td>
                     <td>
-                      Helping a local business reinvent itself
+                      locelf
                     </td>
-                    <td>
+                    <!-- <td>
                       <div class="pages-table-img">
                         <picture><source srcset="./img/avatar/avatar-face-02.webp" type="image/webp"><img src="./img/avatar/avatar-face-02.png" alt="User Name"></picture>
                         Kathryn Murphy
                       </div>
-                    </td>
+                    </td> -->
                     <td><span class="badge-active">Active</span></td>
-                    <td>17.04.2021</td>
-                    <td>
+                    <td>17</td>
+                    <!-- <td>
                       <span class="p-relative">
                         <button class="dropdown-btn transparent-btn" type="button" title="More info">
                           <div class="sr-only">More info</div>
@@ -468,29 +439,29 @@
                           <li><a href="##">Trash</a></li>
                         </ul>
                       </span>
-                    </td>
+                    </td> -->
                   </tr>
                   <tr>
                     <td>
                       <label class="users-table__checkbox">
                         <input type="checkbox" class="check">
                         <div class="categories-table-img">
-                          <picture><source srcset="./img/categories/04.webp" type="image/webp"><img src="./img/categories/04.jpg" alt="category"></picture>
+                           <p>1</p>
                         </div>
                       </label>
                     </td>
                     <td>
-                      Caring is the new marketing
+                      keting
                     </td>
-                    <td>
+                    <!-- <td>
                       <div class="pages-table-img">
                         <picture><source srcset="./img/avatar/avatar-face-05.webp" type="image/webp"><img src="./img/avatar/avatar-face-05.png" alt="User Name"></picture>
                         Guy Hawkins
                       </div>
-                    </td>
+                    </td> -->
                     <td><span class="badge-active">Active</span></td>
-                    <td>17.04.2021</td>
-                    <td>
+                    <td>17</td>
+                    <!-- <td>
                       <span class="p-relative">
                         <button class="dropdown-btn transparent-btn" type="button" title="More info">
                           <div class="sr-only">More info</div>
@@ -502,29 +473,29 @@
                           <li><a href="##">Trash</a></li>
                         </ul>
                       </span>
-                    </td>
+                    </td> -->
                   </tr>
                   <tr>
                     <td>
                       <label class="users-table__checkbox">
                         <input type="checkbox" class="check">
                         <div class="categories-table-img">
-                          <picture><source srcset="./img/categories/01.webp" type="image/webp"><img src="./img/categories/01.jpg" alt="category"></picture>
+                          <p>2</p>
                         </div>
                       </label>
                     </td>
                     <td>
-                      How to build a loyal community online and offline
+                      Holine
                     </td>
-                    <td>
+                    <!-- <td>
                       <div class="pages-table-img">
                         <picture><source srcset="./img/avatar/avatar-face-03.webp" type="image/webp"><img src="./img/avatar/avatar-face-03.png" alt="User Name"></picture>
                         Robert Fox
                       </div>
-                    </td>
+                    </td> -->
                     <td><span class="badge-active">Active</span></td>
-                    <td>17.04.2021</td>
-                    <td>
+                    <td>17</td>
+                    <!-- <td>
                       <span class="p-relative">
                         <button class="dropdown-btn transparent-btn" type="button" title="More info">
                           <div class="sr-only">More info</div>
@@ -536,29 +507,29 @@
                           <li><a href="##">Trash</a></li>
                         </ul>
                       </span>
-                    </td>
+                    </td> -->
                   </tr>
                   <tr>
                     <td>
                       <label class="users-table__checkbox">
                         <input type="checkbox" class="check">
                         <div class="categories-table-img">
-                          <picture><source srcset="./img/categories/03.webp" type="image/webp"><img src="./img/categories/03.jpg" alt="category"></picture>
+                           <p>1</p>
                         </div>
                       </label>
                     </td>
                     <td>
-                      How to build a loyal community online and offline
+                      oil line
                     </td>
-                    <td>
+                    <!-- <td>
                       <div class="pages-table-img">
                         <picture><source srcset="./img/avatar/avatar-face-03.webp" type="image/webp"><img src="./img/avatar/avatar-face-03.png" alt="User Name"></picture>
                         Robert Fox
                       </div>
-                    </td>
+                    </td> -->
                     <td><span class="badge-active">Active</span></td>
-                    <td>17.04.2021</td>
-                    <td>
+                    <td>17</td>
+                    <!-- <td>
                       <span class="p-relative">
                         <button class="dropdown-btn transparent-btn" type="button" title="More info">
                           <div class="sr-only">More info</div>
@@ -570,107 +541,103 @@
                           <li><a href="##">Trash</a></li>
                         </ul>
                       </span>
-                    </td>
+                    </td> -->
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
           <div class="col-lg-3">
-            <article class="customers-wrapper">
-              <canvas id="customersChart" aria-label="Customers statistics" role="img"></canvas>
-              <!--              <p class="customers__title">New Customers <span>+958</span></p>
-              <p class="customers__date">28 Daily Avg.</p>
-              <picture><source srcset="./img/svg/customers.svg" type="image/webp"><img src="./img/svg/customers.svg" alt=""></picture> -->
-            </article>
+           
             <article class="white-block">
-              <div class="top-cat-title">
-                <h3>Top categories</h3>
-                <p>28 Categories, 1400 Posts</p>
-              </div>
-              <ul class="top-cat-list">
-                <li>
-                  <a href="##">
-                    <div class="top-cat-list__title">
-                      Lifestyle <span>8.2k</span>
-                    </div>
-                    <div class="top-cat-list__subtitle">
-                      Dailiy lifestyle articles <span class="purple">+472</span>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="##">
-                    <div class="top-cat-list__title">
-                      Tutorials <span>8.2k</span>
-                    </div>
-                    <div class="top-cat-list__subtitle">
-                      Coding tutorials <span class="blue">+472</span>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="##">
-                    <div class="top-cat-list__title">
-                      Technology <span>8.2k</span>
-                    </div>
-                    <div class="top-cat-list__subtitle">
-                      Dailiy technology articles <span class="danger">+472</span>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="##">
-                    <div class="top-cat-list__title">
-                      UX design <span>8.2k</span>
-                    </div>
-                    <div class="top-cat-list__subtitle">
-                      UX design tips <span class="success">+472</span>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="##">
-                    <div class="top-cat-list__title">
-                      Interaction tips <span>8.2k</span>
-                    </div>
-                    <div class="top-cat-list__subtitle">
-                      Interaction articles <span class="warning">+472</span>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="##">
-                    <div class="top-cat-list__title">
-                      App development <span>8.2k</span>
-                    </div>
-                    <div class="top-cat-list__subtitle">
-                      Mobile development articles <span class="warning">+472</span>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="##">
-                    <div class="top-cat-list__title">
-                      Nature <span>8.2k</span>
-                    </div>
-                    <div class="top-cat-list__subtitle">
-                      Wildlife animal articles <span class="warning">+472</span>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="##">
-                    <div class="top-cat-list__title">
-                      Geography <span>8.2k</span>
-                    </div>
-                    <div class="top-cat-list__subtitle">
-                      Geography articles <span class="primary">+472</span>
-                    </div>
-                  </a>
-                </li>
-              </ul>
+               <div class="top-cat-title">
+                 <h3>Activities</h3>
+                 <p>8 Categories, 1400 Posts</p>
+               </div>
+               <ul class="top-cat-list">
+                 <li>
+                   <a href="##">
+                     <div class="top-cat-list__title">
+                       Crude Oil Extraction <span>12.3k</span>
+                     </div>
+                     <div class="top-cat-list__subtitle">
+                       Daily crude extraction reports <span class="purple">+650</span>
+                     </div>
+                   </a>
+                 </li>
+                 <li>
+                   <a href="##">
+                     <div class="top-cat-list__title">
+                       Drilling Operations <span>9.8k</span>
+                     </div>
+                     <div class="top-cat-list__subtitle">
+                       Oil drilling advancements <span class="blue">+530</span>
+                     </div>
+                   </a>
+                 </li>
+                 <li>
+                   <a href="##">
+                     <div class="top-cat-list__title">
+                       Well Maintenance <span>7.4k</span>
+                     </div>
+                     <div class="top-cat-list__subtitle">
+                       Oil well maintenance tips <span class="danger">+410</span>
+                     </div>
+                   </a>
+                 </li>
+                 <li>
+                   <a href="##">
+                     <div class="top-cat-list__title">
+                       Offshore Drilling <span>6.2k</span>
+                     </div>
+                     <div class="top-cat-list__subtitle">
+                       Insights on offshore platforms <span class="success">+340</span>
+                     </div>
+                   </a>
+                 </li>
+                 <li>
+                   <a href="##">
+                     <div class="top-cat-list__title">
+                       Exploration Technology <span>5.8k</span>
+                     </div>
+                     <div class="top-cat-list__subtitle">
+                       Latest technology in oil exploration <span class="warning">+275</span>
+                     </div>
+                   </a>
+                 </li>
+                 <li>
+                   <a href="##">
+                     <div class="top-cat-list__title">
+                       Refining Process <span>8.9k</span>
+                     </div>
+                     <div class="top-cat-list__subtitle">
+                       Refinery and processing updates <span class="warning">+620</span>
+                     </div>
+                   </a>
+                 </li>
+                 <li>
+                   <a href="##">
+                     <div class="top-cat-list__title">
+                       Environmental Impact <span>4.3k</span>
+                     </div>
+                     <div class="top-cat-list__subtitle">
+                       Managing oil spill risks <span class="warning">+120</span>
+                     </div>
+                   </a>
+                 </li>
+                 <li>
+                   <a href="##">
+                     <div class="top-cat-list__title">
+                       Pipeline Transportation <span>7.7k</span>
+                     </div>
+                     <div class="top-cat-list__subtitle">
+                       Oil transport logistics <span class="primary">+490</span>
+                     </div>
+                   </a>
+                 </li>
+               </ul>
             </article>
+             
           </div>
         </div>
       </div>
