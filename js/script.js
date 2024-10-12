@@ -518,3 +518,42 @@ document.addEventListener('DOMContentLoaded', function () {
 
   addData();
 });
+
+// Get modal and buttons
+const modal = document.getElementById('myModal');
+const openModalBtn = document.getElementById('openModalBtn');
+const closeModal = document.getElementsByClassName('close')[0];
+const cancelBtn = document.querySelector('.cancel-btn');
+const fieldNameInput = document.getElementById('fieldName');
+const errorMessage = document.querySelector('.error-message');
+
+// Open the modal when "Create" button is clicked
+openModalBtn.onclick = function() {
+    modal.style.display = 'block';
+}
+
+// Close modal when 'x' is clicked
+closeModal.onclick = function() {
+    modal.style.display = 'none';
+}
+
+// Close modal when "Cancel" is clicked
+cancelBtn.onclick = function() {
+    modal.style.display = 'none';
+}
+
+// Close modal if clicked outside of modal content
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+
+// Simulate validation error for "Field Name" (just for illustration)
+fieldNameInput.oninput = function() {
+    if (fieldNameInput.value === 'existingName') {
+        errorMessage.style.display = 'block';
+    } else {
+        errorMessage.style.display = 'none';
+    }
+}
