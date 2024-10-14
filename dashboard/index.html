@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oriental Energy | Dashboard</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../img/svg/logo.svg" type="image/x-icon">
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="../css/style.min.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+  <div class="layer"></div>
+<!-- ! Body -->
+<a class="skip-link sr-only" href="#skip-target">Skip to content</a>
+<div class="page-flex">
+  <!-- ! Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-start">
+        <div class="sidebar-head">
+            <a href="/" class="logo-wrapper" title="Home">
+                <span class="sr-only">Home</span>
+                <!-- <span class="icon logo" aria-hidden="true"></span> -->
+                 <img src="../img/Oriental_Energy_Logo.jpg" width="60px" height="60px" style="border-radius: 50px;" alt="logo">
+                <div class="logo-text">
+                    <span class="logo-title">Oriental Energy</span>
+                    <span class="logo-subtitle">Dashboard</span>
+                </div>
+            </a>
+            <button class="sidebar-toggle transparent-btn" title="Menu" type="button">
+                <span class="sr-only">Toggle menu</span>
+                <span class="icon menu-toggle" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="sidebar-body">
+            <ul class="sidebar-body-menu">
+                <li>
+                    <a class="active" href="##"><span class="icon home" aria-hidden="true"></span>Dashboard</a>
+                </li>
+                <li>
+                    <a  href="../users/index.html">
+                        <span class="icon user-3" aria-hidden="true"></span>User Managment
+                    </a>
+                </li>
+                <li>
+                    <a class="show-cat-btn" href="##">
+                        <span class="icon document" aria-hidden="true"></span>Field Setup
+                        <span class="category__btn transparent-btn" title="Open list">
+                            <span class="sr-only">Open list</span>
+                            <span class="icon arrow-down" aria-hidden="true"></span>
+                        </span>
+                    </a>
+                    <ul class="cat-sub-menu">
+                        <li>
+                            <a href="../fields/index.html">Fields</a>
+                        </li>
+                        <li>
+                            <a href="../facility/index.html">Facilities</a>
+                        </li>
+                         <li>
+                            <a href="../production/index.html">Production Platform</a>
+                        </li>
+                         <li>
+                            <a href="../wells/index.html">Wells</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="show-cat-btn" href="##">
+                        <span class="icon folder" aria-hidden="true"></span>Configuration
+                    </a>
+                </li>
+                <li>
+                    <a href="##"><span class="icon setting" aria-hidden="true"></span>System Audit</a>
+                </li>
+            </ul>
+            <!-- <span class="system-menu__title">system</span>
+            <ul class="sidebar-body-menu">
+                <li>
+                    <a href="appearance.html"><span class="icon edit" aria-hidden="true"></span>Appearance</a>
+                </li>
+                <li>
+                    <a class="show-cat-btn" href="##">
+                        <span class="icon category" aria-hidden="true"></span>Extentions
+                        <span class="category__btn transparent-btn" title="Open list">
+                            <span class="sr-only">Open list</span>
+                            <span class="icon arrow-down" aria-hidden="true"></span>
+                        </span>
+                    </a>
+                    <ul class="cat-sub-menu">
+                        <li>
+                            <a href="extention-01.html">Extentions-01</a>
+                        </li>
+                        <li>
+                            <a href="extention-02.html">Extentions-02</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="##"><span class="icon setting" aria-hidden="true"></span>System Audit</a>
+                </li>
+            </ul> -->
+        </div>
+    </div>
+    <div class="sidebar-footer">
+        <a href="##" class="sidebar-user">
+            <span class="sidebar-user-img">
+                <picture><source srcset="../img/avatar/avatar-illustrated-01.webp" type="image/webp"><img src="../img/avatar/avatar-illustrated-01.png" alt="User name"></picture>
+            </span>
+            <div class="sidebar-user-info">
+                <span class="sidebar-user__title">Nafisa Sh.</span>
+                <span class="sidebar-user__subtitle">Support manager</span>
+            </div>
+        </a>
+    </div>
+</aside>
+  <div class="main-wrapper">
+    <!-- ! Main nav -->
+    <nav class="main-nav--bg">
+  <div class="container main-nav">
+    <div class="main-nav-start">
+      <div class="search-wrapper">
+        <i data-feather="search" aria-hidden="true"></i>
+        <input type="text" placeholder="Enter keywords ..." required>
+      </div>
+    </div>
+    <div class="main-nav-end">
+      <button class="sidebar-toggle transparent-btn" title="Menu" type="button">
+        <span class="sr-only">Toggle menu</span>
+        <span class="icon menu-toggle--gray" aria-hidden="true"></span>
+      </button>
+      <div class="lang-switcher-wrapper">
+        <button class="lang-switcher transparent-btn" type="button">
+          EN
+          <i data-feather="chevron-down" aria-hidden="true"></i>
+        </button>
+        <ul class="lang-menu dropdown">
+          <li><a href="##">English</a></li>
+          <li><a href="##">French</a></li>
+          <li><a href="##">Uzbek</a></li>
+        </ul>
+      </div>
+      <button class="theme-switcher gray-circle-btn" type="button" title="Switch theme">
+        <span class="sr-only">Switch theme</span>
+        <i class="sun-icon" data-feather="sun" aria-hidden="true"></i>
+        <i class="moon-icon" data-feather="moon" aria-hidden="true"></i>
+      </button>
+      <div class="notification-wrapper">
+        <button class="gray-circle-btn dropdown-btn" title="To messages" type="button">
+          <span class="sr-only">To messages</span>
+          <span class="icon notification active" aria-hidden="true"></span>
+        </button>
+        <ul class="users-item-dropdown notification-dropdown dropdown">
+          <li>
+            <a href="##">
+              <div class="notification-dropdown-icon info">
+                <i data-feather="check"></i>
+              </div>
+              <div class="notification-dropdown-text">
+                <span class="notification-dropdown__title">System just updated</span>
+                <span class="notification-dropdown__subtitle">The system has been successfully upgraded. Read more
+                  here.</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="##">
+              <div class="notification-dropdown-icon danger">
+                <i data-feather="info" aria-hidden="true"></i>
+              </div>
+              <div class="notification-dropdown-text">
+                <span class="notification-dropdown__title">The cache is full!</span>
+                <span class="notification-dropdown__subtitle">Unnecessary caches take up a lot of memory space and
+                  interfere ...</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="##">
+              <div class="notification-dropdown-icon info">
+                <i data-feather="check" aria-hidden="true"></i>
+              </div>
+              <div class="notification-dropdown-text">
+                <span class="notification-dropdown__title">New Subscriber here!</span>
+                <span class="notification-dropdown__subtitle">A new subscriber has subscribed.</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="link-to-page" href="##">Go to Notifications page</a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-user-wrapper">
+        <button href="##" class="nav-user-btn dropdown-btn" title="My profile" type="button">
+          <span class="sr-only">My profile</span>
+          <span class="nav-user-img">
+            <picture><source srcset="../img/avatar/avatar-illustrated-02.webp" type="image/webp"><img src="../img/avatar/avatar-illustrated-02.png" alt="User name"></picture>
+          </span>
+        </button>
+        <ul class="users-item-dropdown nav-user-dropdown dropdown">
+          <li><a href="##">
+              <i data-feather="user" aria-hidden="true"></i>
+              <span>Profile</span>
+            </a></li>
+          <li><a href="##">
+              <i data-feather="settings" aria-hidden="true"></i>
+              <span>Account settings</span>
+            </a></li>
+          <li><a class="danger" href="##">
+              <i data-feather="log-out" aria-hidden="true"></i>
+              <span>Log out</span>
+            </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+    <!-- ! Main -->
+    <main class="main users chart-page" id="skip-target">
+      <div class="container">
+        <h2 class="main-title">Dashboard</h2>
+        <div class="row stat-cards">
+          <div class="col-md-6 col-xl-3">
+            <article class="stat-cards-item">
+              <div class="stat-cards-icon primary">
+                <i data-feather="target" aria-hidden="true"></i>
+              </div>
+              <div class="stat-cards-info">
+                <p class="stat-cards-info__num">03</p>
+                <p class="stat-cards-info__title">Total Fields</p>
+                <!-- <p class="stat-cards-info__progress">
+                  <span class="stat-cards-info__profit success">
+                    <i data-feather="trending-up" aria-hidden="true"></i>4.07%
+                  </span>
+                  Last month
+                </p> -->
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <article class="stat-cards-item">
+              <div class="stat-cards-icon warning">
+                <i data-feather="database" aria-hidden="true"></i>
+              </div>
+              <div class="stat-cards-info">
+                <p class="stat-cards-info__num">03</p>
+                <p class="stat-cards-info__title">Total Facilities</p>
+                <!-- <p class="stat-cards-info__progress">
+                  <span class="stat-cards-info__profit success">
+                    <i data-feather="trending-up" aria-hidden="true"></i>0.24%
+                  </span>
+                  Last month
+                </p> -->
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <article class="stat-cards-item">
+              <div class="stat-cards-icon purple">
+                <i data-feather="layers" aria-hidden="true"></i>
+              </div>
+              <div class="stat-cards-info">
+                <p class="stat-cards-info__num">02</p>
+                <p class="stat-cards-info__title">Total Platforms</p>
+                <!-- <p class="stat-cards-info__progress">
+                  <span class="stat-cards-info__profit danger">
+                    <i data-feather="trending-down" aria-hidden="true"></i>1.64%
+                  </span>
+                  Last month
+                </p> -->
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <article class="stat-cards-item">
+              <div class="stat-cards-icon success">
+                <i data-feather="user" aria-hidden="true"></i>
+              </div>
+              <div class="stat-cards-info">
+                <p class="stat-cards-info__num">01</p>
+                <p class="stat-cards-info__title">Total Users</p>
+                <!-- <p class="stat-cards-info__progress">
+                  <span class="stat-cards-info__profit warning">
+                    <i data-feather="trending-up" aria-hidden="true"></i>0.00%
+                  </span>
+                  Last month
+                </p> -->
+              </div>
+            </article>
+          </div>
+        </div>
+                <div class="row stat-cards">
+          <div class="col-md-6 col-xl-3">
+            <article class="stat-cards-item">
+              <div class="stat-cards-icon warning">
+                <i data-feather="droplet" aria-hidden="true"></i>
+              </div>
+              <div class="stat-cards-info">
+                <p class="stat-cards-info__num">01</p>
+                <p class="stat-cards-info__title">Total Wells</p>
+                <!-- <p class="stat-cards-info__progress">
+                  <span class="stat-cards-info__profit success">
+                    <i data-feather="trending-up" aria-hidden="true"></i>4.07%
+                  </span>
+                  Last month
+                </p> -->
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <article class="stat-cards-item">
+              <div class="stat-cards-icon success">
+                <i data-feather="droplet" aria-hidden="true"></i>
+              </div>
+              <div class="stat-cards-info">
+                <p class="stat-cards-info__num">03</p>
+                <p class="stat-cards-info__title">Active Wells</p>
+                <!-- <p class="stat-cards-info__progress">
+                  <span class="stat-cards-info__profit success">
+                    <i data-feather="trending-up" aria-hidden="true"></i>0.24%
+                  </span>
+                  Last month
+                </p> -->
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <article class="stat-cards-item">
+              <div class="stat-cards-icon success">
+                <i data-feather="arrow-up-right" aria-hidden="true"></i>
+              </div>
+              <div class="stat-cards-info">
+                <p class="stat-cards-info__num">220</p>
+                <p class="stat-cards-info__title">Total UpLines</p>
+                <!-- <p class="stat-cards-info__progress">
+                  <span class="stat-cards-info__profit danger">
+                    <i data-feather="trending-down" aria-hidden="true"></i>1.64%
+                  </span>
+                  Last month
+                </p> -->
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <article class="stat-cards-item">
+              <div class="stat-cards-icon danger">
+                <i data-feather="arrow-down-right" aria-hidden="true"></i>
+              </div>
+              <div class="stat-cards-info">
+                <p class="stat-cards-info__num">212</p>
+                <p class="stat-cards-info__title">Total DownLines</p>
+                <!-- <p class="stat-cards-info__progress">
+                  <span class="stat-cards-info__profit warning">
+                    <i data-feather="trending-up" aria-hidden="true"></i>0.00%
+                  </span>
+                  Last month
+                </p> -->
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="chart">
+              <canvas id="myChart" aria-label="Site statistics" role="img"></canvas>
+            </div>
+            <div class="users-table table-wrapper">
+              <div class="table-controls">
+              <div class="table-controls-left">
+                <!-- From and To Date Inputs -->
+                <label for="from-date">From: </label>
+                <input type="date" id="from-date" name="from-date">
+                
+                <label for="to-date">To: </label>
+                <input type="date" id="to-date" name="to-date">
+              </div>
+
+              <div class="table-controls-right">
+                <!-- Field Dropdown -->
+       
+                <div class="tableDropdown">
+                  <button class="tableDropdown-btn" id="fieldDropdown"><sapn>Field</sapn> <i data-feather="target" aria-hidden="true"></i></button>
+                  <div class="tableDropdown-content">
+                    <a href="##">Field 1</a>
+                    <a href="##">Field 2</a>
+                    <a href="##">Field 3</a>
+                  </div>
+                </div>
+                
+                <!-- Status Dropdown -->
+                <div class="tableDropdown">
+                  <button class="tableDropdown-btn" id="statusDropdown">Status <i data-feather="bar-chart" aria-hidden="true"></i></button>
+                  <div class="tableDropdown-content">
+                    <a href="##">Active</a>
+                    <a href="##">Pending</a>
+                    <a href="##">Inactive</a>
+                  </div>
+                </div>
+                
+                <!-- Clear Button -->
+                <button class="btn clear" id="clearBtn">Clear <i data-feather="x" aria-hidden="true"></i></button>
+                
+                <!-- Search Button -->
+                <button class="btn create" id="searchBtn">Search <i data-feather="search" aria-hidden="true"></i></button>
+                
+                <!-- Create Well Button -->
+                <button class="btn create" id="createWellBtn">Create Well <i data-feather="plus" aria-hidden="true"></i></button>
+              </div>
+              </div>
+
+              <!-- Table -->
+              <table class="posts-table">
+              <thead>
+                <tr class="users-table-info">
+                  <th>
+                    <label class="users-table__checkbox ms-20">
+                      <input type="checkbox" class="check-all">S/N
+                    </label>
+                  </th>
+                  <th>Name</th>
+                  <th>Avg. Uptime</th>
+                  <th>Avg. Oil</th>
+                  <th>Avg. Gas</th>
+                  <th>Field</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody">
+                  <tr>
+                    <td>
+                      <label class="users-table__checkbox">
+                        <input type="checkbox" class="check">1
+                      </label>
+                    </td>
+                    <td>Ebok </td>
+                    <td>5 yrs</td>
+                    <td>1202 Lt</td>
+                    <td>1021 Kg</td>
+                    <td>Field 3</td>
+                    <td><span class="badge-pending">Pending</span></td>
+                    <td>
+                      <span class="p-relative">
+                        <button class="dropdown-btn transparent-btn" type="button" title="More info">
+                          <div class="sr-only">More info</div>
+                          <i data-feather="more-horizontal" aria-hidden="true"></i>
+                        </button>
+                        <ul class="users-item-dropdown dropdown">
+                           <li><a href="##">View</a></li>
+                          <li><a href="##">Deactivate</a></li>
+                        </ul>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="users-table__checkbox">
+                        <input type="checkbox" class="check">2
+                      </label>
+                    </td>
+                    <td>Ebok</td>
+                    <td>5 yrs</td>
+                    <td>1202 Lt</td>
+                    <td>1721 Kg</td>
+                    <td>Field 3</td>
+                    <td><span class="badge-active">Active</span></td>
+                    <td>
+                      <span class="p-relative">
+                        <button class="dropdown-btn transparent-btn" type="button" title="More info">
+                          <div class="sr-only">More info</div>
+                          <i data-feather="more-horizontal" aria-hidden="true"></i>
+                        </button>
+                        <ul class="users-item-dropdown dropdown">
+                          <li><a href="##">View</a></li>
+                          <li><a href="##">Deactivate</a></li>
+                        </ul>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="users-table__checkbox">
+                        <input type="checkbox" class="check">3
+                      </label>
+                    </td>
+                    <td>Ebok</td>
+                    <td>3 yrs</td>
+                    <td>1562 Lt</td>
+                    <td>6721 Kg</td>
+                    <td>Field 1</td>
+                    <td><span class="badge-active">Active</span></td>
+                    <td>
+                      <span class="p-relative">
+                        <button class="dropdown-btn transparent-btn" type="button" title="More info">
+                          <div class="sr-only">More info</div>
+                          <i data-feather="more-horizontal" aria-hidden="true"></i>
+                        </button>
+                        <ul class="users-item-dropdown dropdown">
+                          <li><a href="##">View</a></li>
+                          <li><a href="##">Deactivate</a></li>
+                        </ul>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="users-table__checkbox">
+                        <input type="checkbox" class="check">4
+                      </label>
+                    </td>
+                    <td>Ebok</td>
+                    <td>4 yrs</td>
+                    <td>1202 Lt</td>
+                    <td>1751 Kg</td>
+                    <td>Field 2</td>
+                    <td><span class="badge-active">Active</span></td>
+                    <td>
+                      <span class="p-relative">
+                        <button class="dropdown-btn transparent-btn" type="button" title="More info">
+                          <div class="sr-only">More info</div>
+                          <i data-feather="more-horizontal" aria-hidden="true"></i>
+                        </button>
+                        <ul class="users-item-dropdown dropdown">
+                          <li><a href="##">View</a></li>
+                          <li><a href="##">Deactivate</a></li>
+                        </ul>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="users-table__checkbox">
+                        <input type="checkbox" class="check">5
+                      </label>
+                    </td>
+                    <td>Ebok</td>
+                    <td>5 yrs</td>
+                    <td>1202 Lt</td>
+                    <td>1721 Kg</td>
+                    <td>Field 3</td>
+                    <td><span class="badge-active">Active</span></td>
+                    <td>
+                      <span class="p-relative">
+                        <button class="dropdown-btn transparent-btn" type="button" title="More info">
+                          <div class="sr-only">More info</div>
+                          <i data-feather="more-horizontal" aria-hidden="true"></i>
+                        </button>
+                        <ul class="users-item-dropdown dropdown">
+                          <li><a href="##">View</a></li>
+                          <li><a href="##">Deactivate</a></li>
+                        </ul>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="users-table__checkbox">
+                        <input type="checkbox" class="check">6
+                      </label>
+                    </td>
+                    <td>Ebok</td>
+                    <td>5 yrs</td>
+                    <td>1202 Lt</td>
+                    <td>1721 Kg</td>
+                    <td>Field 3</td>
+                    <td><span class="badge-active">Active</span></td>
+                    <td>
+                      <span class="p-relative">
+                        <button class="dropdown-btn transparent-btn" type="button" title="More info">
+                          <div class="sr-only">More info</div>
+                          <i data-feather="more-horizontal" aria-hidden="true"></i>
+                        </button>
+                        <ul class="users-item-dropdown dropdown">
+                          <li><a href="##">View</a></li>
+                          <li><a href="##">Deactivate</a></li>
+                        </ul>
+                      </span>
+                    </td>
+                  </tr>
+              </tbody>
+              </table>
+              <!-- Pagination Controls -->
+               <div class="paginationWrap">
+                <div class="pagination">
+                  <button onclick="prevPage()">Previous</button>
+                  <span id="pageInfo">Page 1 of 1</span>
+                  <button onclick="nextPage()">Next</button>
+                </div>
+               </div>
+            </div>
+          </div>
+   
+        </div>
+      </div>
+    </main>
+    <!-- ! Footer -->
+<footer class="footer">
+  <div class="container footer--flex">
+    <div class="footer-start">
+      <p>2025 © Oriental Energy - <a href="https://oriental-er.com/" target="_blank" rel="noopener noreferrer">oriental-er.com</a></p>
+    </div>
+  
+  </div>
+</footer>
+  </div>
+</div>
+<!-- Chart library -->
+<script src="../plugins/chart.min.js"></script>
+<!-- Icons library -->
+<script src="../plugins/feather.min.js"></script>
+<!-- Custom scripts -->
+<script src="../js/script.js"></script>
+
+<script>
+  // Clear form function
+  document.getElementById('clearBtn').addEventListener('click', function() {
+    document.getElementById('from-date').value = '';
+    document.getElementById('to-date').value = '';
+    // Clear dropdown selections (optional logic here)
+  });
+
+  // Search function to filter the table
+  document.getElementById('searchBtn').addEventListener('click', function() {
+    const fromDate = document.getElementById('from-date').value;
+    const toDate = document.getElementById('to-date').value;
+
+    // Add logic to filter the table based on field, status, and date values
+    console.log('Searching with From:', fromDate, 'To:', toDate);
+    
+    // Example logic to filter rows based on date (modify as per actual requirements)
+    const rows = document.querySelectorAll('#tableBody tr');
+    rows.forEach(row => {
+      const rowDate = new Date(row.querySelector('td:nth-child(3)').textContent); // Assuming date in 3rd column
+      const fromDateObj = new Date(fromDate);
+      const toDateObj = new Date(toDate);
+      
+      if ((fromDate && rowDate < fromDateObj) || (toDate && rowDate > toDateObj)) {
+        row.style.display = 'none';
+      } else {
+        row.style.display = '';
+      }
+    });
+  });
+
+    const rowsPerPage = 3; // Number of rows to show per page
+    let currentPage = 1;
+    const table = document.getElementById('tableBody');
+    const rows = table.querySelectorAll('tr');
+    const totalPages = Math.ceil(rows.length / rowsPerPage);
+
+    // Function to display the current page of rows
+    function displayRows(page) {
+      // Hide all rows first
+      rows.forEach(row => row.style.display = 'none');
+
+      const start = (page - 1) * rowsPerPage;
+      const end = start + rowsPerPage;
+
+      // Show the relevant rows for the current page
+      for (let i = start; i < end && i < rows.length; i++) {
+        rows[i].style.display = '';
+      }
+
+      // Update pagination info
+      document.getElementById('pageInfo').textContent = `Page ${currentPage} of ${totalPages}`;
+    }
+
+    // Function to handle the "Previous" button
+    function prevPage() {
+      if (currentPage > 1) {
+        currentPage--;
+        displayRows(currentPage);
+      }
+    }
+
+    // Function to handle the "Next" button
+    function nextPage() {
+      if (currentPage < totalPages) {
+        currentPage++;
+        displayRows(currentPage);
+      }
+    }
+
+    // Initialize the table by displaying the first page
+    displayRows(currentPage);
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+
+
+  .table-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .table-controls-left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .table-controls-left input{
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    color: #a5a5a5;
+    margin: 0 9px;
+  }
+  
+  .table-controls-right {
+    display: flex;
+    gap: 10px;
+  }
+
+  .tableDropdown{
+    display: block;
+  }
+  .tableDropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    min-width: 150px;
+    z-index: 1;
+  }
+  .tableDropdown-content a{
+    padding: 12px;
+    width: 100%;
+  }
+    .tableDropdown-content a:hover{
+        background-color: #ccc;
+  }
+
+  .tableDropdown:hover .tableDropdown-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tableDropdown-btn {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    color: #a5a5a5;
+    padding: 11px 13px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+     cursor: pointer;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    background-color: white;
+    color: #a5a5a5;
+   border-radius: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+
+ /* .tableDropdown-btn:active {
+    background-color: #0056b3;
+    color: white;
+  } */
+  .create{
+    background-color: #0056b3;
+    color: white;
+  }
+  .clear{
+    background-color: rgb(250, 138, 138);
+    color: white;
+  }
+
+  .paginationWrap{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: end;
+    margin-top: 16px;
+  }
+  .pagination button{
+    padding: 15px;
+    background-color: white;
+    color: #a5a5a5;
+   border-radius: 10px;
+   margin: 0 5px;
+
+  }

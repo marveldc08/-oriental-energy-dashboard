@@ -331,26 +331,51 @@ document.addEventListener('DOMContentLoaded', function () {
     if (ctx) {
       var myCanvas = ctx.getContext('2d');
       var myChart = new Chart(myCanvas, {
-        type: 'line',
+        type: "line",
         data: {
-          labels: ['Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-          datasets: [{
-            label: 'Last 6 months',
-            data: [35, 27, 40, 15, 30, 25, 45],
-            cubicInterpolationMode: 'monotone',
-            tension: 0.4,
-            backgroundColor: ['rgba(95, 46, 234, 1)'],
-            borderColor: ['rgba(95, 46, 234, 1)'],
-            borderWidth: 2
-          }, {
-            label: 'Previous',
-            data: [20, 36, 16, 45, 29, 32, 10],
-            cubicInterpolationMode: 'monotone',
-            tension: 0.4,
-            backgroundColor: ['rgba(75, 222, 151, 1)'],
-            borderColor: ['rgba(75, 222, 151, 1)'],
-            borderWidth: 2
-          }]
+          labels: [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec"
+          ],
+          datasets: [
+            {
+              label: "Feild 1",
+              data: [0, 27, 40, 15, 30, 25, 45, 55, 31, 53, 10, 75],
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+              backgroundColor: ["rgba(95, 46, 234, 1)"],
+              borderColor: ["rgba(95, 46, 234, 1)"],
+              borderWidth: 2,
+            },
+            {
+              label: "Feild 2",
+              data: [0, 36, 16, 45, 29, 32, 10, 35, 55, 29, 20, 99],
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+              backgroundColor: ["rgba(75, 222, 151, 1)"],
+              borderColor: ["rgba(75, 222, 151, 1)"],
+              borderWidth: 2,
+            },
+            {
+              label: "Feild 3",
+              data: [0, 26, 36, 25, 49, 32, 50, 45, 51, 23, 30, 82],
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+              backgroundColor: ["rgba(255, 184, 76, 1)"],
+              borderColor: ["rgba(255, 184, 76, 1)"],
+              borderWidth: 2,
+            },
+          ],
         },
         options: {
           scales: {
@@ -358,59 +383,59 @@ document.addEventListener('DOMContentLoaded', function () {
               min: 0,
               max: 100,
               ticks: {
-                stepSize: 25
+                stepSize: 25,
               },
               grid: {
-                display: false
-              }
+                display: false,
+              },
             },
             x: {
               grid: {
-                color: gridLine
-              }
-            }
+                color: gridLine,
+              },
+            },
           },
           elements: {
             point: {
-              radius: 2
-            }
+              radius: 2,
+            },
           },
           plugins: {
             legend: {
-              position: 'top',
-              align: 'end',
+              position: "top",
+              align: "end",
               labels: {
                 boxWidth: 8,
                 boxHeight: 8,
                 usePointStyle: true,
                 font: {
                   size: 12,
-                  weight: '500'
-                }
-              }
+                  weight: "500",
+                },
+              },
             },
             title: {
               display: true,
-              text: ['Visitor statistics', 'Nov - July'],
-              align: 'start',
-              color: '#171717',
+              text: ["Fields statistics", "Jan - Dec"],
+              align: "start",
+              color: "#171717",
               font: {
                 size: 16,
-                family: 'Inter',
-                weight: '600',
-                lineHeight: 1.4
-              }
-            }
+                family: "Inter",
+                weight: "600",
+                lineHeight: 1.4,
+              },
+            },
           },
           tooltips: {
-            mode: 'index',
-            intersect: false
+            mode: "index",
+            intersect: false,
           },
           hover: {
-            mode: 'nearest',
-            intersect: true
-          }
-        }
+            mode: "nearest",
+            intersect: true,
+          },
+        },
       });
       charts.visitors = myChart;
     }
@@ -518,3 +543,42 @@ document.addEventListener('DOMContentLoaded', function () {
 
   addData();
 });
+
+// Get modal and buttons
+const modal = document.getElementById('myModal');
+const openModalBtn = document.getElementById('openModalBtn');
+const closeModal = document.getElementsByClassName('close')[0];
+const cancelBtn = document.querySelector('.cancel-btn');
+const fieldNameInput = document.getElementById('fieldName');
+const errorMessage = document.querySelector('.error-message');
+
+// Open the modal when "Create" button is clicked
+openModalBtn.onclick = function() {
+    modal.style.display = 'block';
+}
+
+// Close modal when 'x' is clicked
+closeModal.onclick = function() {
+    modal.style.display = 'none';
+}
+
+// Close modal when "Cancel" is clicked
+cancelBtn.onclick = function() {
+    modal.style.display = 'none';
+}
+
+// Close modal if clicked outside of modal content
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+
+// Simulate validation error for "Field Name" (just for illustration)
+fieldNameInput.oninput = function() {
+    if (fieldNameInput.value === 'existingName') {
+        errorMessage.style.display = 'block';
+    } else {
+        errorMessage.style.display = 'none';
+    }
+}
