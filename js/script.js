@@ -324,7 +324,94 @@ document.addEventListener('DOMContentLoaded', function () {
       return gradient;
     }
     /* Visitors chart */
+    function filterChart() {
+      const selectedRange = document.getElementById("timeRangeDropdown").value;
+      let labels = [];
+      let datasets = [];
 
+      switch (selectedRange) {
+        case "30":
+          // Update chart for last 30 days (assuming daily data for the past month)
+          labels = ["Day 1", "Day 2", "Day 3", "Day 30"]; // Adjust the labels accordingly
+          datasets = [
+            {
+              label: "Field 1",
+              data: [10, 20, 30, 50], // Data for last 30 days
+              // other dataset properties
+            },
+            {
+              label: "Field 2",
+              data: [15, 25, 35, 55], // Data for last 30 days
+              // other dataset properties
+            },
+            // Add more datasets if needed
+          ];
+          break;
+
+        case "6months":
+          // Update chart for last 6 months
+          labels = [
+            "Month 1",
+            "Month 2",
+            "Month 3",
+            "Month 4",
+            "Month 5",
+            "Month 6",
+          ];
+          datasets = [
+            {
+              label: "Field 1",
+              data: [200, 250, 300, 350, 400, 450], // Data for last 6 months
+              // other dataset properties
+            },
+            {
+              label: "Field 2",
+              data: [220, 270, 320, 370, 420, 470], // Data for last 6 months
+              // other dataset properties
+            },
+            // Add more datasets if needed
+          ];
+          break;
+
+        case "1year":
+          // Update chart for last 1 year
+          labels = [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+          ];
+          datasets = [
+            {
+              label: "Field 1",
+              data: [10, 27, 40, 15, 30, 25, 45, 55, 31, 53, 10, 75], // Data for last 12 months
+              // other dataset properties
+            },
+            {
+              label: "Field 2",
+              data: [0, 36, 16, 45, 29, 32, 10, 35, 55, 29, 20, 99], // Data for last 12 months
+              // other dataset properties
+            },
+            // Add more datasets if needed
+          ];
+          break;
+      }
+
+      // Update the chart data
+      myChart.data.labels = labels;
+      myChart.data.datasets = datasets;
+
+      // Re-render the chart
+      myChart.update();
+    }
 
     var ctx = document.getElementById('myChart');
 
@@ -439,6 +526,8 @@ document.addEventListener('DOMContentLoaded', function () {
       });
       charts.visitors = myChart;
     }
+
+
     /* Customers chart */
 
 

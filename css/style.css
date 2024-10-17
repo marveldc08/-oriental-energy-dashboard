@@ -1370,12 +1370,12 @@ button.disabled:focus {
   flex-wrap: wrap;
   border-radius: 4px;
   padding: 10px 20px;
-  background-color: #2f49d1;
+  background-color: #0E7B58;
   color: #fff;
 }
 
 .primary-default-btn:hover {
-  background-color: #4661F0;
+  background-color: #0E7B58;
   color: #fff;
 }
 
@@ -1394,14 +1394,14 @@ button.disabled:focus {
   border-radius: 4px;
   padding: 10px 20px;
   background-color: #fff;
-  color: #2f49d1;
+  color: #0E7B58;
   font-weight: 500;
   font-size: 14px;
   line-height: 2.43;
 }
 
 .primary-white-btn:hover {
-  color: #4661F0;
+  color: #0E7B58;
 }
 
 .secondary-default-btn {
@@ -1418,8 +1418,8 @@ button.disabled:focus {
   flex-wrap: wrap;
   border-radius: 4px;
   padding: 10px 20px;
-  border: 2px solid #2f49d1;
-  color: #2f49d1;
+  border: 2px solid #0E7B58;
+  color: #0E7B58;
   background-color: transparent;
 }
 
@@ -1442,7 +1442,7 @@ button.disabled:focus {
   border-radius: 4px;
   font-size: 16px;
   line-height: 1.5;
-  color: #2f49d1;
+  color: #0E7B58;
 }
 
 .sidebar-toggle {
@@ -1965,6 +1965,7 @@ label {
   overflow-x: auto;
   overflow-y: hidden;
   margin-bottom: 20px;
+
 }
 
 .table-wrapper table {
@@ -1994,7 +1995,7 @@ label {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  background-color: #0061f7 !important;
+  background-color: #0E7B58 !important;
   width: 253px;
   padding: 20px 15px 37px 20px;
   -webkit-transition: 0.5s all;
@@ -2665,7 +2666,7 @@ label {
 
 .stat-cards-icon.primary {
   background-color: rgba(47, 73, 209, 0.1);
-  color: #2f49d1;
+  color: #0E7B58;
 }
 
 .stat-cards-icon.warning {
@@ -2889,7 +2890,7 @@ label {
 }
 
 .top-cat-list__subtitle .primary {
-  color: #2f49d1;
+  color: #0E7B58;
   background-color: rgba(47, 73, 209, 0.1);
 }
 

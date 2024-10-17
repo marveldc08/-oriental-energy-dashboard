@@ -10,54 +10,57 @@
   <link rel="shortcut icon" href="../img/svg/logo.svg" type="image/x-icon">
   <!-- Custom styles -->
   <link rel="stylesheet" href="../css/style.min.css">
+  <link rel="stylesheet" href="./register.css">
 </head>
 
 <body>
-  <div class="layer"></div>
-<div class="row">
-  <div style="width: 40%; height: 100%;">
-    <img src="../img/signUpBG.jpg" width="100%" height="100%" alt="">
-  </div>
-  <div style="width: 60%; height: 100%;">
-  <main class="page-center" >
-  <article class="sign-up">
-     <img src="../img/Oriental_Energy_Logo.jpg" width="100px" height="80px" style="border-radius: 10px;" alt="logo">
-    <h1 class="sign-up__title">Register Your Account</h1>
-    <p class="sign-up__subtitle">Setup your account here.</p>
+  <!-- <div class="layer registerWrap" ></div> -->
+  <div class="col-12 registerWrap">
+    <div class=" col-5" >
+      <img src="../img/signUpBG.jpg" width="100%" height="800px" alt="">
+    </div>
+    <div class=" col-7" >
+      <main class="page-center " >
+        <article class="sign-up">
+          <img src="../img/Oriental_Energy_Logo.jpg" width="100px" height="80px" style="border-radius: 10px;" alt="logo">
+          <h1 class="sign-up__title">Register Your Account</h1>
+          <p class="sign-up__subtitle">Setup your account here.</p>
 
-    <form class="sign-up-form form" action="" method="">
-      <label class="form-label-wrapper">
-        <p class="form-label">Name</p>
-        <input class="form-input" readonly value="John Donald" type="text" placeholder="Enter your name" required>
-      </label>
-      <label class="form-label-wrapper">
-        <p class="form-label">Email</p>
-        <input class="form-input" readonly value="johndonald22@gmail.com" id="email" type="email" placeholder="Enter your email" required>
-      </label>
-      <label class="form-label-wrapper">
-        <p class="form-label">Password</p>
-        <input class="form-input" id="createPassword" type="password" placeholder="Enter your password" required>
-        <small id="passwordStrength" class="strength-indicator"></small>
-      </label>
-      <label class="form-label-wrapper">
-        <p class="form-label">Confirm Password</p>
-        <input class="form-input" id="confirmPassword" type="password" placeholder="Confirm your password" required>
-        <small id="confirmPasswordMessage" class="confirm-indicator"></small>
-      </label>
-      <button class="form-btn primary-default-btn transparent-btn" type="button"  onclick="register()">Register</button>
-    </form>
-  </article>
-  </main>
-  </div>
+          <form class="sign-up-form form" action="" method="" onsubmit="register(event)">
+            <label class="form-label-wrapper">
+              <p class="form-label">Name</p>
+              <input class="form-input" readonly value="John Donald" type="text" placeholder="Enter your name" required>
+            </label>
+            <label class="form-label-wrapper">
+              <p class="form-label">Email</p>
+              <input class="form-input" readonly value="johndonald22@gmail.com" id="email" type="email" placeholder="Enter your email" required>
+            </label>
+            <label class="form-label-wrapper">
+              <p class="form-label">Password</p>
+              <input class="form-input" id="createPassword" type="password" placeholder="Enter your password" required>
+              <small id="passwordStrength" class="strength-indicator"></small>
+            </label>
+            <label class="form-label-wrapper">
+              <p class="form-label">Confirm Password</p>
+              <input class="form-input" id="confirmPassword" type="password" placeholder="Confirm your password" required>
+              <small id="confirmPasswordMessage" class="confirm-indicator"></small>
+            </label>
+            <button class="form-btn primary-default-btn transparent-btn" type="submit" >Register</button>
+            <button class="form-btn primary-default-btn transparent-btn" type="button" id="loginButton" onclick="login()">Login</button>
+          </form>
+        </article>
+      </main>
+    </div>
 
-</div>
+  </div>
 <!-- Chart library -->
 <script src="../plugins/chart.min.js"></script>
 <!-- Icons library -->
 <script src="../plugins/feather.min.js"></script>
 <!-- Custom scripts -->
+ <script src="./register.js"></script>
 <script src="../js/script.js"></script>
-<script src="../js/customScript.js"></script>
+
 </body>
 
 </html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataTable with Filters</title>
+  
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  <!-- jQuery UI for DatePicker -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+  
+  <!-- Custom Styles -->
+  <style>
+    .filter-section {
+      margin-bottom: 20px;
+    }
+    .filter-section label {
+      margin-right: 10px;
+    }
+    .filter-section select, .filter-section input {
+      margin-right: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="filter-section">
+  <label for="fieldFilter">Field:</label>
+  <select id="fieldFilter">
+    <option value="">All Fields</option>
+    <option value="Field 1">Field 1</option>
+    <option value="Field 2">Field 2</option>
+    <option value="Field 3">Field 3</option>
+  </select>
+
+  <label for="statusFilter">Status:</label>
+  <select id="statusFilter">
+    <option value="">All Statuses</option>
+    <option value="Active">Active</option>
+    <option value="Pending">Pending</option>
+  </select>
+
+  <label for="fromDate">From:</label>
+  <input type="text" id="fromDate" class="datepicker" placeholder="Select From Date">
+
+  <label for="toDate">To:</label>
+  <input type="text" id="toDate" class="datepicker" placeholder="Select To Date">
+
+  <button class="btn clear" id="clearBtn" id="clearFilters">Clear <i data-feather="x" aria-hidden="true"></i></button>
+
+  <button class="btn create" id="createWellBtn">Create Well <i data-feather="plus" aria-hidden="true"></i></button>
+</div>
+
+<table id="example" class="display" style="width:100%">
+  <thead>
+    <tr>
+      <th>S/N</th>
+      <th>Name</th>
+      <th>Avg. Uptime</th>
+      <th>Avg. Oil</th>
+      <th>Avg. Gas</th>
+      <th>Field</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Ebok</td>
+      <td>5 yrs</td>
+      <td>1202 Lt</td>
+      <td>1021 Kg</td>
+      <td>Field 3</td>
+      <td>Pending</td>
+      <td><button>View</button></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Ebok</td>
+      <td>5 yrs</td>
+      <td>1202 Lt</td>
+      <td>1721 Kg</td>
+      <td>Field 3</td>
+      <td>Active</td>
+      <td><button>View</button></td>
+    </tr>
+    <!-- More rows as necessary -->
+  </tbody>
+</table>
+
+<!-- jQuery and DataTables JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<!-- jQuery UI for DatePicker -->
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
+<script>
+  $(document).ready(function () {
+    // Initialize DataTables
+    var table = $('#example').DataTable();
+
+    // DatePicker setup
+    $(".datepicker").datepicker({
+      dateFormat: 'yy-mm-dd'
+    });
+
+    // Filter by Field
+    $('#fieldFilter').on('change', function () {
+      table.column(5).search(this.value).draw();  // Column index 5 is Field
+    });
+
+    // Filter by Status
+    $('#statusFilter').on('change', function () {
+      table.column(6).search(this.value).draw();  // Column index 6 is Status
+    });
+
+    // Date range filter
+    $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {
+      var fromDate = $('#fromDate').datepicker("getDate");
+      var toDate = $('#toDate').datepicker("getDate");
+      var date = new Date(data[2]); // Column index 2 is Avg. Uptime (which we'll treat as a date in this example)
+
+      if ((fromDate === null && toDate === null) ||
+        (fromDate === null && date <= toDate) ||
+        (toDate === null && date >= fromDate) ||
+        (date >= fromDate && date <= toDate)) {
+        return true;
+      }
+      return false;
+    });
+
+    // Trigger date range filtering
+    $('#fromDate, #toDate').on('change', function () {
+      table.draw();
+    });
+
+    // Clear all filters
+    $('#clearFilters').on('click', function () {
+      $('#fieldFilter').val('');
+      $('#statusFilter').val('');
+      $('#fromDate').val('');
+      $('#toDate').val('');
+      table.search('').columns().search('').draw();
+    });
+  });
+</script>
+
+</body>
+</html>

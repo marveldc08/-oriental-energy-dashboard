@@ -1,17 +1,19 @@
 
-
+.wrap{
+    background-color: white;
+  margin-top: 12px;
+  padding: 15px;
+  border-radius: 10px;
+}
   .table-controls {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: end;
+     align-items: center;
     margin-bottom: 10px;
   }
   
-  .table-controls-left {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .table-controls-left input{
+  .table-controls input{
     background-color: white;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -19,10 +21,6 @@
     margin: 0 9px;
   }
   
-  .table-controls-right {
-    display: flex;
-    gap: 10px;
-  }
 
   .tableDropdown{
     display: block;
@@ -68,12 +66,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 10px;
+    padding: 15px;
+    width: 40%;
     background-color: white;
     color: #a5a5a5;
    border-radius: 10px;
     border: 1px solid #ccc;
     cursor: pointer;
+    margin: 0 5px;
   }
 
  /* .tableDropdown-btn:active {
@@ -81,13 +81,30 @@
     color: white;
   } */
   .create{
-    background-color: #0056b3;
+    background-color: #0E7B58;
     color: white;
   }
   .clear{
-    background-color: rgb(250, 138, 138);
+    background-color: rgb(247, 9, 9);
     color: white;
   }
+
+  .filter-section {
+    margin-bottom: 20px;
+  }
+  .filter-section label {
+    margin-right: 10px;
+  }
+  .filter-section select, .filter-section input {
+    margin-right: 15px;
+  }
+  input[type="text"], select {
+   width: 50%;
+   padding: 15px;
+   margin-bottom: 5px;
+   border-radius: 5px;
+   border: 1px solid #ccc;
+}
 
   .paginationWrap{
     width: 100%;

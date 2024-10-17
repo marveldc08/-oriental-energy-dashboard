@@ -6,7 +6,7 @@
    justify-content: end;
 }
 #openModalBtn {
-   background-color: #2f49d1;
+   background-color: #0E7B58;
    color: white;
    padding: 10px 10px;
    margin-bottom: 5px;
@@ -155,7 +155,7 @@ input[type="checkbox"] {
 }
 
 .create-btn {
-   background-color: #2f49d1;
+   background-color: #0E7B58;
    color: white;
    padding: 10px 10px;
    border: none;
@@ -168,6 +168,13 @@ input[type="checkbox"] {
    border-radius: 5px;
    font-size: 16px;
 }
+
+ .tableWrap{
+   background-color: white;
+   border-radius: 10px;
+   padding: 20px;
+   /* margin: 0 15px; */
+  }
 
 .darkmode .create-btn{
    background-color: #161624;

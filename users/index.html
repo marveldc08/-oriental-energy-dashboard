@@ -8,6 +8,11 @@
   <title>Oriental Energy | Users</title>
   <!-- Favicon -->
   <link rel="shortcut icon" href="../img/svg/logo.svg" type="image/x-icon">
+
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  <!-- jQuery UI for DatePicker -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
   <!-- Custom styles -->
   <link rel="stylesheet" href="../css/style.min.css">
   <link rel="stylesheet" href="../users/users.css">
@@ -199,100 +204,37 @@
     <main class="main users chart-page" id="skip-target">
       <div class="container">
       <h2 class="main-title">Users</h2>
-        <div class="row">
+        <div class="row tableWrap">
           <div class="col-lg-12">
-   
-            <div class="users-table table-wrapper">
-              <div class="table-controls">
-              <div class="table-controls-right">
-                <!-- Field Dropdown -->
-       
-                <div class="tableDropdown">
-                  <button class="tableDropdown-btn" id="fieldDropdown"><sapn>Role</sapn> <i data-feather="user" aria-hidden="true"></i></button>
-                  <div class="tableDropdown-content">
-                    <a href="##">Admin</a>
-                    <a href="##">Engineer 2</a>
-                    <a href="##">Med. Ass.</a>
-                  </div>
-                </div>
-                
-                <!-- Status Dropdown -->
-                <div class="tableDropdown">
-                  <button class="tableDropdown-btn" id="statusDropdown">Status <i data-feather="bar-chart" aria-hidden="true"></i></button>
-                  <div class="tableDropdown-content">
-                    <a href="##">Active</a>
-                    <a href="##">Pending</a>
-                    <a href="##">Inactive</a>
-                  </div>
-                </div>
-                
-                <!-- Search Button -->
-                <button class="btn create" id="searchBtn">Search <i data-feather="search" aria-hidden="true"></i></button>
-                
-                <!-- Create Well Button -->
-                <button class="btn create" id="openModalBtn">Create<i data-feather="plus" aria-hidden="true"></i></button>
-                <div id="myModal" class="modal">
-                    <div class="modal-content">
-                        <!-- Close button -->
-                        <span class="close">&times;</span>
 
-                        <!-- Form Title -->
-                        <h2 class="main-title">Create New Entry</h2>
+              <div class="users-table table-wrapper ">
 
-                        <!-- Form Fields -->
-                        <form>
-                            <!-- Field Name Input -->
-                            <div class="input-group">
-                                <label for="fieldName">Employe ID</label>
-                                <input type="text" id="autocompleteInput" name="employeID" placeholder="Enter Employe ID " oninput="filterOptions()" required>
-                                  <ul id="dropdownList" class="dropdown-list">
-                                       
-                                  </ul>
-                            </div>
-                       
-                            <div class="input-group">
-                                <label for="fieldName">Name</label>
-                                <input type="text" id="fieldName" name="name" value="John Doe" readonly required>
-                              
-                            </div>
-                            <div class="input-group">
-                                <label for="fieldName">Email</label>
-                                <input type="text" id="fieldName" name="email"  value="johndoe@gmail.com" readonly required>
-                               
-                            </div>
-                            <div class="input-group">
-                                <label for="fieldName">Role</label>
-                                <select type="text" id="fieldName" name="role" required>
-                                        <option value="Admin">Select Role</option>
-                                        <option value="Admin">Admin</option>
-                                        <option value="Engineer">Engineer</option>
-                                        <option value="Engineer 2">Engineer 2</option>
-                                        <option value="Medical Assistance">Medical Assistance</option>
-                                </select>
-                             
-                            </div>
+                <div class="filter-section table-controls">
 
-                
+                  <label for="fieldFilter">Field:</label>
+                  <select id="fieldFilter">
+                    <option value="">All Fields</option>
+                    <option value="Field 1">Field 1</option>
+                    <option value="Field 2">Field 2</option>
+                    <option value="Field 3">Field 3</option>
+                  </select>
 
-                            <!-- Action Buttons -->
-                            <div class="button-group">
-                                <button type="button" class="cancel-btn">
-                                <p>Cancel</p>
-                                <img src="../img/svg/Bulk/Close Square.svg" alt="" srcset="">
-                                </button>
-                                <button type="submit" class="create-btn">
-                                <p>Create</p>
-                                <img src="../img/svg/Bulk/plus.svg" alt="" srcset="">
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-              </div>
-              </div>
+                  <label for="statusFilter">Status:</label>
+                  <select id="statusFilter">
+                    <option value="">All Statuses</option>
+                    <option value="Active">Active</option>
+                    <option value="Pending">Pending</option>
+                  </select>
 
-              <!-- Table -->
-              <table class="posts-table">
+
+
+                  <button class="btn clear" id="clearFilters">Clear <i data-feather="x-circle" aria-hidden="true"></i></button>
+
+                  <button class="btn create" id="createWellBtn">Create <i data-feather="plus-circle" aria-hidden="true"></i></button>
+                </div> 
+
+                  <!-- Table -->
+           <table class="posts-table" id="example">
               <thead>
                 <tr class="users-table-info">
                   <th>
@@ -481,16 +423,8 @@
                   </tr>
 
               </tbody>
-              </table>
-              <!-- Pagination Controls -->
-               <div class="paginationWrap">
-                <div class="pagination">
-                  <button onclick="prevPage()">Previous</button>
-                  <span id="pageInfo">Page 1 of 1</span>
-                  <button onclick="nextPage()">Next</button>
-                </div>
-               </div>
-            </div>
+              </table>        
+              </div>            
           </div>
    
         </div>
@@ -513,6 +447,64 @@
 <script src="../plugins/feather.min.js"></script>
 <!-- Custom scripts -->
 <script src="../js/script.js"></script>
+
+<!-- jQuery and DataTables JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<!-- jQuery UI for DatePicker -->
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
+
+<script>
+  $(document).ready(function () {
+    // Initialize DataTables
+    var table = $('#example').DataTable();
+
+    // DatePicker setup
+    $(".datepicker").datepicker({
+      dateFormat: 'yy-mm-dd'
+    });
+
+    // Filter by Field
+    $('#fieldFilter').on('change', function () {
+      table.column(5).search(this.value).draw();  // Column index 5 is Field
+    });
+
+    // Filter by Status
+    $('#statusFilter').on('change', function () {
+      table.column(6).search(this.value).draw();  // Column index 6 is Status
+    });
+
+    // Date range filter
+    $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {
+      var fromDate = $('#fromDate').datepicker("getDate");
+      var toDate = $('#toDate').datepicker("getDate");
+      var date = new Date(data[2]); // Column index 2 is Avg. Uptime (which we'll treat as a date in this example)
+
+      if ((fromDate === null && toDate === null) ||
+        (fromDate === null && date <= toDate) ||
+        (toDate === null && date >= fromDate) ||
+        (date >= fromDate && date <= toDate)) {
+        return true;
+      }
+      return false;
+    });
+
+    // Trigger date range filtering
+    $('#fromDate, #toDate').on('change', function () {
+      table.draw();
+    });
+
+    // Clear all filters
+    $('#clearFilters').on('click', function () {
+      $('#fieldFilter').val('');
+      $('#statusFilter').val('');
+      $('#fromDate').val('');
+      $('#toDate').val('');
+      table.search('').columns().search('').draw();
+    });
+  });
+</script>
 
 <script>
   // Clear form function

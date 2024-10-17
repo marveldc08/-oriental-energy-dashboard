@@ -8,8 +8,14 @@
   <title>Oriental Energy | Dashboard</title>
   <!-- Favicon -->
   <link rel="shortcut icon" href="../img/svg/logo.svg" type="image/x-icon">
-  <!-- Custom styles -->
+
+ 
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  <!-- jQuery UI for DatePicker -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="../css/style.min.css">
+    <!-- Custom styles -->
   <link rel="stylesheet" href="dashboard.css">
 </head>
 
@@ -368,231 +374,221 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="chart">
+              <div style="position: absolute; top: 10px; right: 10px;">
+                <select id="timeRangeDropdown" onchange="filterChart()">
+                  <option value="30">Last 30 days</option>
+                  <option value="6months">Last 6 months</option>
+                  <option value="1year">Last 1 year</option>
+                </select>
+              </div>
+
               <canvas id="myChart" aria-label="Site statistics" role="img"></canvas>
             </div>
-            <div class="users-table table-wrapper">
-              <div class="table-controls">
-              <div class="table-controls-left">
-                <!-- From and To Date Inputs -->
-                <label for="from-date">From: </label>
-                <input type="date" id="from-date" name="from-date">
-                
-                <label for="to-date">To: </label>
-                <input type="date" id="to-date" name="to-date">
-              </div>
+            <div class="wrap">
+              <div class="users-table table-wrapper ">
 
-              <div class="table-controls-right">
-                <!-- Field Dropdown -->
-       
-                <div class="tableDropdown">
-                  <button class="tableDropdown-btn" id="fieldDropdown"><sapn>Field</sapn> <i data-feather="target" aria-hidden="true"></i></button>
-                  <div class="tableDropdown-content">
-                    <a href="##">Field 1</a>
-                    <a href="##">Field 2</a>
-                    <a href="##">Field 3</a>
-                  </div>
-                </div>
-                
-                <!-- Status Dropdown -->
-                <div class="tableDropdown">
-                  <button class="tableDropdown-btn" id="statusDropdown">Status <i data-feather="bar-chart" aria-hidden="true"></i></button>
-                  <div class="tableDropdown-content">
-                    <a href="##">Active</a>
-                    <a href="##">Pending</a>
-                    <a href="##">Inactive</a>
-                  </div>
-                </div>
-                
-                <!-- Clear Button -->
-                <button class="btn clear" id="clearBtn">Clear <i data-feather="x" aria-hidden="true"></i></button>
-                
-                <!-- Search Button -->
-                <button class="btn create" id="searchBtn">Search <i data-feather="search" aria-hidden="true"></i></button>
-                
-                <!-- Create Well Button -->
-                <button class="btn create" id="createWellBtn">Create Well <i data-feather="plus" aria-hidden="true"></i></button>
-              </div>
-              </div>
+                <div class="filter-section table-controls">
 
-              <!-- Table -->
-              <table class="posts-table">
-              <thead>
-                <tr class="users-table-info">
-                  <th>
-                    <label class="users-table__checkbox ms-20">
-                      <input type="checkbox" class="check-all">S/N
-                    </label>
-                  </th>
-                  <th>Name</th>
-                  <th>Avg. Uptime</th>
-                  <th>Avg. Oil</th>
-                  <th>Avg. Gas</th>
-                  <th>Field</th>
-                  <th>Status</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody id="tableBody">
-                  <tr>
-                    <td>
-                      <label class="users-table__checkbox">
-                        <input type="checkbox" class="check">1
-                      </label>
-                    </td>
-                    <td>Ebok </td>
-                    <td>5 yrs</td>
-                    <td>1202 Lt</td>
-                    <td>1021 Kg</td>
-                    <td>Field 3</td>
-                    <td><span class="badge-pending">Pending</span></td>
-                    <td>
-                      <span class="p-relative">
-                        <button class="dropdown-btn transparent-btn" type="button" title="More info">
-                          <div class="sr-only">More info</div>
-                          <i data-feather="more-horizontal" aria-hidden="true"></i>
-                        </button>
-                        <ul class="users-item-dropdown dropdown">
-                           <li><a href="##">View</a></li>
-                          <li><a href="##">Deactivate</a></li>
-                        </ul>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <label class="users-table__checkbox">
-                        <input type="checkbox" class="check">2
-                      </label>
-                    </td>
-                    <td>Ebok</td>
-                    <td>5 yrs</td>
-                    <td>1202 Lt</td>
-                    <td>1721 Kg</td>
-                    <td>Field 3</td>
-                    <td><span class="badge-active">Active</span></td>
-                    <td>
-                      <span class="p-relative">
-                        <button class="dropdown-btn transparent-btn" type="button" title="More info">
-                          <div class="sr-only">More info</div>
-                          <i data-feather="more-horizontal" aria-hidden="true"></i>
-                        </button>
-                        <ul class="users-item-dropdown dropdown">
-                          <li><a href="##">View</a></li>
-                          <li><a href="##">Deactivate</a></li>
-                        </ul>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <label class="users-table__checkbox">
-                        <input type="checkbox" class="check">3
-                      </label>
-                    </td>
-                    <td>Ebok</td>
-                    <td>3 yrs</td>
-                    <td>1562 Lt</td>
-                    <td>6721 Kg</td>
-                    <td>Field 1</td>
-                    <td><span class="badge-active">Active</span></td>
-                    <td>
-                      <span class="p-relative">
-                        <button class="dropdown-btn transparent-btn" type="button" title="More info">
-                          <div class="sr-only">More info</div>
-                          <i data-feather="more-horizontal" aria-hidden="true"></i>
-                        </button>
-                        <ul class="users-item-dropdown dropdown">
-                          <li><a href="##">View</a></li>
-                          <li><a href="##">Deactivate</a></li>
-                        </ul>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <label class="users-table__checkbox">
-                        <input type="checkbox" class="check">4
-                      </label>
-                    </td>
-                    <td>Ebok</td>
-                    <td>4 yrs</td>
-                    <td>1202 Lt</td>
-                    <td>1751 Kg</td>
-                    <td>Field 2</td>
-                    <td><span class="badge-active">Active</span></td>
-                    <td>
-                      <span class="p-relative">
-                        <button class="dropdown-btn transparent-btn" type="button" title="More info">
-                          <div class="sr-only">More info</div>
-                          <i data-feather="more-horizontal" aria-hidden="true"></i>
-                        </button>
-                        <ul class="users-item-dropdown dropdown">
-                          <li><a href="##">View</a></li>
-                          <li><a href="##">Deactivate</a></li>
-                        </ul>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <label class="users-table__checkbox">
-                        <input type="checkbox" class="check">5
-                      </label>
-                    </td>
-                    <td>Ebok</td>
-                    <td>5 yrs</td>
-                    <td>1202 Lt</td>
-                    <td>1721 Kg</td>
-                    <td>Field 3</td>
-                    <td><span class="badge-active">Active</span></td>
-                    <td>
-                      <span class="p-relative">
-                        <button class="dropdown-btn transparent-btn" type="button" title="More info">
-                          <div class="sr-only">More info</div>
-                          <i data-feather="more-horizontal" aria-hidden="true"></i>
-                        </button>
-                        <ul class="users-item-dropdown dropdown">
-                          <li><a href="##">View</a></li>
-                          <li><a href="##">Deactivate</a></li>
-                        </ul>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <label class="users-table__checkbox">
-                        <input type="checkbox" class="check">6
-                      </label>
-                    </td>
-                    <td>Ebok</td>
-                    <td>5 yrs</td>
-                    <td>1202 Lt</td>
-                    <td>1721 Kg</td>
-                    <td>Field 3</td>
-                    <td><span class="badge-active">Active</span></td>
-                    <td>
-                      <span class="p-relative">
-                        <button class="dropdown-btn transparent-btn" type="button" title="More info">
-                          <div class="sr-only">More info</div>
-                          <i data-feather="more-horizontal" aria-hidden="true"></i>
-                        </button>
-                        <ul class="users-item-dropdown dropdown">
-                          <li><a href="##">View</a></li>
-                          <li><a href="##">Deactivate</a></li>
-                        </ul>
-                      </span>
-                    </td>
-                  </tr>
-              </tbody>
-              </table>
-              <!-- Pagination Controls -->
-               <div class="paginationWrap">
-                <div class="pagination">
-                  <button onclick="prevPage()">Previous</button>
-                  <span id="pageInfo">Page 1 of 1</span>
-                  <button onclick="nextPage()">Next</button>
-                </div>
-               </div>
+                  <label for="fromDate">From:</label>
+                  <input type="text" id="fromDate" class="datepicker" placeholder="Select From Date">
+
+                  <label for="toDate">To:</label>
+                  <input type="text" id="toDate" class="datepicker" placeholder="Select To Date">
+
+                  <label for="fieldFilter">Field:</label>
+                  <select id="fieldFilter">
+                    <option value="">All Fields</option>
+                    <option value="Field 1">Field 1</option>
+                    <option value="Field 2">Field 2</option>
+                    <option value="Field 3">Field 3</option>
+                  </select>
+
+                  <label for="statusFilter">Status:</label>
+                  <select id="statusFilter">
+                    <option value="">All Statuses</option>
+                    <option value="Active">Active</option>
+                    <option value="Pending">Pending</option>
+                  </select>
+
+
+
+                  <button class="btn clear" id="clearFilters">Clear <i data-feather="x-circle" aria-hidden="true"></i></button>
+
+                  <button class="btn create" id="createWellBtn">Create Well <i data-feather="plus-circle" aria-hidden="true"></i></button>
+                </div> 
+
+                  <!-- Table -->
+                  <table class="posts-table" id="example">
+                    <thead>
+                      <tr class="users-table-info">
+                        <th>
+                          <label class="users-table__checkbox ms-20">
+                            <input type="checkbox" class="check-all">S/N
+                          </label>
+                        </th>
+                        <th>Name</th>
+                        <th>Avg. Uptime</th>
+                        <th>Avg. Oil</th>
+                        <th>Avg. Gas</th>
+                        <th>Field</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr>
+                          <td>
+                            <label class="users-table__checkbox">
+                              <input type="checkbox" class="check">1
+                            </label>
+                          </td>
+                          <td>Ebok </td>
+                          <td>5 yrs</td>
+                          <td>1202 Lt</td>
+                          <td>1021 Kg</td>
+                          <td>Field 3</td>
+                          <td><span class="badge-pending">Pending</span></td>
+                          <td>
+                            <span class="p-relative">
+                              <button class="dropdown-btn transparent-btn" type="button" title="More info">
+                                <div class="sr-only">More info</div>
+                                <i data-feather="more-horizontal" aria-hidden="true"></i>
+                              </button>
+                              <ul class="users-item-dropdown dropdown">
+                                <li><a href="##">View</a></li>
+                                <li><a href="##">Deactivate</a></li>
+                              </ul>
+                            </span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label class="users-table__checkbox">
+                              <input type="checkbox" class="check">2
+                            </label>
+                          </td>
+                          <td>Ebok</td>
+                          <td>5 yrs</td>
+                          <td>1202 Lt</td>
+                          <td>1721 Kg</td>
+                          <td>Field 3</td>
+                          <td><span class="badge-active">Active</span></td>
+                          <td>
+                            <span class="p-relative">
+                              <button class="dropdown-btn transparent-btn" type="button" title="More info">
+                                <div class="sr-only">More info</div>
+                                <i data-feather="more-horizontal" aria-hidden="true"></i>
+                              </button>
+                              <ul class="users-item-dropdown dropdown">
+                                <li><a href="##">View</a></li>
+                                <li><a href="##">Deactivate</a></li>
+                              </ul>
+                            </span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label class="users-table__checkbox">
+                              <input type="checkbox" class="check">3
+                            </label>
+                          </td>
+                          <td>Ebok</td>
+                          <td>3 yrs</td>
+                          <td>1562 Lt</td>
+                          <td>6721 Kg</td>
+                          <td>Field 1</td>
+                          <td><span class="badge-active">Active</span></td>
+                          <td>
+                            <span class="p-relative">
+                              <button class="dropdown-btn transparent-btn" type="button" title="More info">
+                                <div class="sr-only">More info</div>
+                                <i data-feather="more-horizontal" aria-hidden="true"></i>
+                              </button>
+                              <ul class="users-item-dropdown dropdown">
+                                <li><a href="##">View</a></li>
+                                <li><a href="##">Deactivate</a></li>
+                              </ul>
+                            </span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label class="users-table__checkbox">
+                              <input type="checkbox" class="check">4
+                            </label>
+                          </td>
+                          <td>Ebok</td>
+                          <td>4 yrs</td>
+                          <td>1202 Lt</td>
+                          <td>1751 Kg</td>
+                          <td>Field 2</td>
+                          <td><span class="badge-active">Active</span></td>
+                          <td>
+                            <span class="p-relative">
+                              <button class="dropdown-btn transparent-btn" type="button" title="More info">
+                                <div class="sr-only">More info</div>
+                                <i data-feather="more-horizontal" aria-hidden="true"></i>
+                              </button>
+                              <ul class="users-item-dropdown dropdown">
+                                <li><a href="##">View</a></li>
+                                <li><a href="##">Deactivate</a></li>
+                              </ul>
+                            </span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label class="users-table__checkbox">
+                              <input type="checkbox" class="check">5
+                            </label>
+                          </td>
+                          <td>Ebok</td>
+                          <td>5 yrs</td>
+                          <td>1202 Lt</td>
+                          <td>1721 Kg</td>
+                          <td>Field 3</td>
+                          <td><span class="badge-active">Active</span></td>
+                          <td>
+                            <span class="p-relative">
+                              <button class="dropdown-btn transparent-btn" type="button" title="More info">
+                                <div class="sr-only">More info</div>
+                                <i data-feather="more-horizontal" aria-hidden="true"></i>
+                              </button>
+                              <ul class="users-item-dropdown dropdown">
+                                <li><a href="##">View</a></li>
+                                <li><a href="##">Deactivate</a></li>
+                              </ul>
+                            </span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <label class="users-table__checkbox">
+                              <input type="checkbox" class="check">6
+                            </label>
+                          </td>
+                          <td>Ebok</td>
+                          <td>5 yrs</td>
+                          <td>1202 Lt</td>
+                          <td>1721 Kg</td>
+                          <td>Field 3</td>
+                          <td><span class="badge-active">Active</span></td>
+                          <td>
+                            <span class="p-relative">
+                              <button class="dropdown-btn transparent-btn" type="button" title="More info">
+                                <div class="sr-only">More info</div>
+                                <i data-feather="more-horizontal" aria-hidden="true"></i>
+                              </button>
+                              <ul class="users-item-dropdown dropdown">
+                                <li><a href="##">View</a></li>
+                                <li><a href="##">Deactivate</a></li>
+                              </ul>
+                            </span>
+                          </td>
+                        </tr>
+                    </tbody>
+                  </table>           
+              </div>            
             </div>
           </div>
    
@@ -610,6 +606,8 @@
 </footer>
   </div>
 </div>
+
+
 <!-- Chart library -->
 <script src="../plugins/chart.min.js"></script>
 <!-- Icons library -->
@@ -617,13 +615,65 @@
 <!-- Custom scripts -->
 <script src="../js/script.js"></script>
 
+<!-- jQuery and DataTables JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<!-- jQuery UI for DatePicker -->
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
 <script>
-  // Clear form function
-  document.getElementById('clearBtn').addEventListener('click', function() {
-    document.getElementById('from-date').value = '';
-    document.getElementById('to-date').value = '';
-    // Clear dropdown selections (optional logic here)
+  $(document).ready(function () {
+    // Initialize DataTables
+    var table = $('#example').DataTable();
+
+    // DatePicker setup
+    $(".datepicker").datepicker({
+      dateFormat: 'yy-mm-dd'
+    });
+
+    // Filter by Field
+    $('#fieldFilter').on('change', function () {
+      table.column(5).search(this.value).draw();  // Column index 5 is Field
+    });
+
+    // Filter by Status
+    $('#statusFilter').on('change', function () {
+      table.column(6).search(this.value).draw();  // Column index 6 is Status
+    });
+
+    // Date range filter
+    $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {
+      var fromDate = $('#fromDate').datepicker("getDate");
+      var toDate = $('#toDate').datepicker("getDate");
+      var date = new Date(data[2]); // Column index 2 is Avg. Uptime (which we'll treat as a date in this example)
+
+      if ((fromDate === null && toDate === null) ||
+        (fromDate === null && date <= toDate) ||
+        (toDate === null && date >= fromDate) ||
+        (date >= fromDate && date <= toDate)) {
+        return true;
+      }
+      return false;
+    });
+
+    // Trigger date range filtering
+    $('#fromDate, #toDate').on('change', function () {
+      table.draw();
+    });
+
+    // Clear all filters
+    $('#clearFilters').on('click', function () {
+      $('#fieldFilter').val('');
+      $('#statusFilter').val('');
+      $('#fromDate').val('');
+      $('#toDate').val('');
+      table.search('').columns().search('').draw();
+    });
   });
+</script>
+
+<script>
+
 
   // Search function to filter the table
   document.getElementById('searchBtn').addEventListener('click', function() {
