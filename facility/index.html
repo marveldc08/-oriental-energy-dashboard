@@ -8,6 +8,11 @@
   <title>Oriental Energies | Fields</title>
   <!-- Favicon -->
   <link rel="shortcut icon" href="./img/svg/logo.svg" type="image/x-icon">
+
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  <!-- jQuery UI for DatePicker -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
   <!-- Custom styles -->
   <link rel="stylesheet" href="../css/style.min.css">
   <link rel="stylesheet" href="facility.css">
@@ -225,13 +230,6 @@
     <main class="main users chart-page" id="skip-target">
       <div class="container">
         <h2 class="main-title">Facilities</h2>
-        <!-- Button to open the modal -->
-        <div class="modbtn">
-            <button id="openModalBtn">
-               <p>Create</p>
-             <img src="../img/svg/Bulk/plus.svg" alt="" srcset="">
-            </button>
-        </div>
 
          <!-- Modal structure -->
          <div id="myModal" class="modal">
@@ -284,227 +282,236 @@
                   </form>
             </div>
          </div>
-         <div class="row">
-          <div class="col-lg-12">
-            <div class="users-table table-wrapper">
-              <table class="posts-table">
-                <thead>
-                  <tr class="users-table-info">
-                    <th>
-                      <label class="users-table__checkbox ms-20">
-                        <input type="checkbox" class="check-all">S/N
-                      </label>
-                    </th>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Status</th>
-                    <th>Date created</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <label class="users-table__checkbox">
-                        <input type="checkbox" class="check">
-                        <div class="categories-table-img"> 
-                          <p>1</p>
+         <div> 
+
+            <div class="col-lg-12 tableWrap" ">
+                <div class="modbtn">
+                      <button id="openModalBtn">
+                        <p>Create</p>
+                        <img src="../img/svg/Bulk/plus.svg" alt="" srcset="">
+                      </button>
+                  </div>
+                <div class="users-table table-wrapper ">
+                      <!-- Table -->
+                <table class="posts-table" id="example">
+                  <thead>
+                    <tr class="users-table-info">
+                      <th>
+                        <label class="users-table__checkbox ms-20">
+                          <input type="checkbox" class="check-all">S/N
+                        </label>
+                      </th>
+                      <th>Name</th>
+                      <th>Type</th>
+                      <th>Status</th>
+                      <th>Date created</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <label class="users-table__checkbox">
+                          <input type="checkbox" class="check">
+                          <div class="categories-table-img"> 
+                            <p>1</p>
+                          </div>
+                        </label>
+                      </td>
+                      <td>
+                        Starting your traveling blog with Vasco
+                      </td>
+                      <td>
+                        <div class="pages-table-img">
+                          Jenon
                         </div>
-                      </label>
-                    </td>
-                    <td>
-                      Starting your traveling blog with Vasco
-                    </td>
-                    <td>
-                      <div class="pages-table-img">
-                        Jenon
-                      </div>
-                    </td>
-                    <td><span class="badge-pending">Pending</span></td>
-                    <td>17.04.2021</td>
-                    <td>
-                      <span class="p-relative">
-                        <button class="dropdown-btn transparent-btn" type="button" title="More info">
-                          <div class="sr-only">More info</div>
-                          <i data-feather="more-horizontal" aria-hidden="true"></i>
-                        </button>
-                        <ul class="users-item-dropdown dropdown">
-                          <li><a href="##">Edit</a></li>
-                          <li><a href="##">Quick edit</a></li>
-                          <li><a href="##">Trash</a></li>
-                        </ul>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <label class="users-table__checkbox">
-                        <input type="checkbox" class="check">
-                        <div class="categories-table-img">
-                          <p>1</p>
+                      </td>
+                      <td><span class="badge-pending">Pending</span></td>
+                      <td>17.04.2021</td>
+                      <td>
+                        <span class="p-relative">
+                          <button class="dropdown-btn transparent-btn" type="button" title="More info">
+                            <div class="sr-only">More info</div>
+                            <i data-feather="more-horizontal" aria-hidden="true"></i>
+                          </button>
+                          <ul class="users-item-dropdown dropdown">
+                            <li><a href="##">Edit</a></li>
+                            <li><a href="##">Quick edit</a></li>
+                            <li><a href="##">Trash</a></li>
+                          </ul>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="users-table__checkbox">
+                          <input type="checkbox" class="check">
+                          <div class="categories-table-img">
+                            <p>1</p>
+                          </div>
+                        </label>
+                      </td>
+                      <td>
+                        Start a blog to reach your creative peak
+                      </td>
+                      <td>
+                        <div class="pages-table-img">
+                          nette Black
                         </div>
-                      </label>
-                    </td>
-                    <td>
-                      Start a blog to reach your creative peak
-                    </td>
-                    <td>
-                      <div class="pages-table-img">
-                        nette Black
-                      </div>
-                    </td>
-                    <td><span class="badge-pending">Pending</span></td>
-                    <td>23.04.2021</td>
-                    <td>
-                      <span class="p-relative">
-                        <button class="dropdown-btn transparent-btn" type="button" title="More info">
-                          <div class="sr-only">More info</div>
-                          <i data-feather="more-horizontal" aria-hidden="true"></i>
-                        </button>
-                        <ul class="users-item-dropdown dropdown">
-                          <li><a href="##">Edit</a></li>
-                          <li><a href="##">Quick edit</a></li>
-                          <li><a href="##">Trash</a></li>
-                        </ul>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <label class="users-table__checkbox">
-                        <input type="checkbox" class="check">
-                        <div class="categories-table-img">
-                          <p>1</p>
+                      </td>
+                      <td><span class="badge-pending">Pending</span></td>
+                      <td>23.04.2021</td>
+                      <td>
+                        <span class="p-relative">
+                          <button class="dropdown-btn transparent-btn" type="button" title="More info">
+                            <div class="sr-only">More info</div>
+                            <i data-feather="more-horizontal" aria-hidden="true"></i>
+                          </button>
+                          <ul class="users-item-dropdown dropdown">
+                            <li><a href="##">Edit</a></li>
+                            <li><a href="##">Quick edit</a></li>
+                            <li><a href="##">Trash</a></li>
+                          </ul>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="users-table__checkbox">
+                          <input type="checkbox" class="check">
+                          <div class="categories-table-img">
+                            <p>1</p>
+                          </div>
+                        </label>
+                      </td>
+                      <td>
+                        Helping a local business reinvent itself
+                      </td>
+                      <td>
+                        <div class="pages-table-img">
+                          Kaphy
                         </div>
-                      </label>
-                    </td>
-                    <td>
-                      Helping a local business reinvent itself
-                    </td>
-                    <td>
-                      <div class="pages-table-img">
-                        Kaphy
-                      </div>
-                    </td>
-                    <td><span class="badge-active">Active</span></td>
-                    <td>17.04.2021</td>
-                    <td>
-                      <span class="p-relative">
-                        <button class="dropdown-btn transparent-btn" type="button" title="More info">
-                          <div class="sr-only">More info</div>
-                          <i data-feather="more-horizontal" aria-hidden="true"></i>
-                        </button>
-                        <ul class="users-item-dropdown dropdown">
-                          <li><a href="##">Edit</a></li>
-                          <li><a href="##">Quick edit</a></li>
-                          <li><a href="##">Trash</a></li>
-                        </ul>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <label class="users-table__checkbox">
-                        <input type="checkbox" class="check">
-                        <div class="categories-table-img">
-                          <p>1</p>
+                      </td>
+                      <td><span class="badge-active">Active</span></td>
+                      <td>17.04.2021</td>
+                      <td>
+                        <span class="p-relative">
+                          <button class="dropdown-btn transparent-btn" type="button" title="More info">
+                            <div class="sr-only">More info</div>
+                            <i data-feather="more-horizontal" aria-hidden="true"></i>
+                          </button>
+                          <ul class="users-item-dropdown dropdown">
+                            <li><a href="##">Edit</a></li>
+                            <li><a href="##">Quick edit</a></li>
+                            <li><a href="##">Trash</a></li>
+                          </ul>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="users-table__checkbox">
+                          <input type="checkbox" class="check">
+                          <div class="categories-table-img">
+                            <p>1</p>
+                          </div>
+                        </label>
+                      </td>
+                      <td>
+                        Caring is the new marketing
+                      </td>
+                      <td>
+                        <div class="pages-table-img">
+                          Guwkins
                         </div>
-                      </label>
-                    </td>
-                    <td>
-                      Caring is the new marketing
-                    </td>
-                    <td>
-                      <div class="pages-table-img">
-                        Guwkins
-                      </div>
-                    </td>
-                    <td><span class="badge-active">Active</span></td>
-                    <td>17.04.2021</td>
-                    <td>
-                      <span class="p-relative">
-                        <button class="dropdown-btn transparent-btn" type="button" title="More info">
-                          <div class="sr-only">More info</div>
-                          <i data-feather="more-horizontal" aria-hidden="true"></i>
-                        </button>
-                        <ul class="users-item-dropdown dropdown">
-                          <li><a href="##">Edit</a></li>
-                          <li><a href="##">Quick edit</a></li>
-                          <li><a href="##">Trash</a></li>
-                        </ul>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <label class="users-table__checkbox">
-                        <input type="checkbox" class="check">
-                        <div class="categories-table-img"> 
-                          <p>1</p>
+                      </td>
+                      <td><span class="badge-active">Active</span></td>
+                      <td>17.04.2021</td>
+                      <td>
+                        <span class="p-relative">
+                          <button class="dropdown-btn transparent-btn" type="button" title="More info">
+                            <div class="sr-only">More info</div>
+                            <i data-feather="more-horizontal" aria-hidden="true"></i>
+                          </button>
+                          <ul class="users-item-dropdown dropdown">
+                            <li><a href="##">Edit</a></li>
+                            <li><a href="##">Quick edit</a></li>
+                            <li><a href="##">Trash</a></li>
+                          </ul>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="users-table__checkbox">
+                          <input type="checkbox" class="check">
+                          <div class="categories-table-img"> 
+                            <p>1</p>
+                          </div>
+                        </label>
+                      </td>
+                      <td>
+                        How to build a loyal community online and offline
+                      </td>
+                      <td>
+                        <div class="pages-table-img">
+                          berox
                         </div>
-                      </label>
-                    </td>
-                    <td>
-                      How to build a loyal community online and offline
-                    </td>
-                    <td>
-                      <div class="pages-table-img">
-                        berox
-                      </div>
-                    </td>
-                    <td><span class="badge-active">Active</span></td>
-                    <td>17.04.2021</td>
-                    <td>
-                      <span class="p-relative">
-                        <button class="dropdown-btn transparent-btn" type="button" title="More info">
-                          <div class="sr-only">More info</div>
-                          <i data-feather="more-horizontal" aria-hidden="true"></i>
-                        </button>
-                        <ul class="users-item-dropdown dropdown">
-                          <li><a href="##">Edit</a></li>
-                          <li><a href="##">Quick edit</a></li>
-                          <li><a href="##">Trash</a></li>
-                        </ul>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <label class="users-table__checkbox">
-                        <input type="checkbox" class="check">
-                        <div class="categories-table-img">
-                          <p>1</p>
+                      </td>
+                      <td><span class="badge-active">Active</span></td>
+                      <td>17.04.2021</td>
+                      <td>
+                        <span class="p-relative">
+                          <button class="dropdown-btn transparent-btn" type="button" title="More info">
+                            <div class="sr-only">More info</div>
+                            <i data-feather="more-horizontal" aria-hidden="true"></i>
+                          </button>
+                          <ul class="users-item-dropdown dropdown">
+                            <li><a href="##">Edit</a></li>
+                            <li><a href="##">Quick edit</a></li>
+                            <li><a href="##">Trash</a></li>
+                          </ul>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label class="users-table__checkbox">
+                          <input type="checkbox" class="check">
+                          <div class="categories-table-img">
+                            <p>1</p>
+                          </div>
+                        </label>
+                      </td>
+                      <td>
+                        How to build a loyal community online and offline
+                      </td>
+                      <td>
+                        <div class="pages-table-img">
+                          berox
                         </div>
-                      </label>
-                    </td>
-                    <td>
-                      How to build a loyal community online and offline
-                    </td>
-                    <td>
-                      <div class="pages-table-img">
-                        berox
-                      </div>
-                    </td>
-                    <td><span class="badge-active">Active</span></td>
-                    <td>17.04.2021</td>
-                    <td>
-                      <span class="p-relative">
-                        <button class="dropdown-btn transparent-btn" type="button" title="More info">
-                          <div class="sr-only">More info</div>
-                          <i data-feather="more-horizontal" aria-hidden="true"></i>
-                        </button>
-                        <ul class="users-item-dropdown dropdown">
-                          <li><a href="##">Edit</a></li>
-                          <li><a href="##">Quick edit</a></li>
-                          <li><a href="##">Trash</a></li>
-                        </ul>
-                      </span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                      </td>
+                      <td><span class="badge-active">Active</span></td>
+                      <td>17.04.2021</td>
+                      <td>
+                        <span class="p-relative">
+                          <button class="dropdown-btn transparent-btn" type="button" title="More info">
+                            <div class="sr-only">More info</div>
+                            <i data-feather="more-horizontal" aria-hidden="true"></i>
+                          </button>
+                          <ul class="users-item-dropdown dropdown">
+                            <li><a href="##">Edit</a></li>
+                            <li><a href="##">Quick edit</a></li>
+                            <li><a href="##">Trash</a></li>
+                          </ul>
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>     
+                </div>            
+        
             </div>
-          </div>
       </div>
     </main>
     <!-- ! Footer -->
@@ -524,6 +531,116 @@
 <script src="../plugins/feather.min.js"></script>
 <!-- Custom scripts -->
 <script src="../js/script.js"></script>
+
+<!-- jQuery and DataTables JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<!-- jQuery UI for DatePicker -->
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
+
+<script>
+  $(document).ready(function () {
+    // Initialize DataTables
+    var table = $('#example').DataTable();
+
+    // DatePicker setup
+    $(".datepicker").datepicker({
+      dateFormat: 'yy-mm-dd'
+    });
+
+    // Filter by Field
+    $('#fieldFilter').on('change', function () {
+      table.column(5).search(this.value).draw();  // Column index 5 is Field
+    });
+
+    // Filter by Status
+    $('#statusFilter').on('change', function () {
+      table.column(6).search(this.value).draw();  // Column index 6 is Status
+    });
+
+    // Date range filter
+    $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {
+      var fromDate = $('#fromDate').datepicker("getDate");
+      var toDate = $('#toDate').datepicker("getDate");
+      var date = new Date(data[2]); // Column index 2 is Avg. Uptime (which we'll treat as a date in this example)
+
+      if ((fromDate === null && toDate === null) ||
+        (fromDate === null && date <= toDate) ||
+        (toDate === null && date >= fromDate) ||
+        (date >= fromDate && date <= toDate)) {
+        return true;
+      }
+      return false;
+    });
+
+    // Trigger date range filtering
+    $('#fromDate, #toDate').on('change', function () {
+      table.draw();
+    });
+
+    // Clear all filters
+    $('#clearFilters').on('click', function () {
+      $('#fieldFilter').val('');
+      $('#statusFilter').val('');
+      $('#fromDate').val('');
+      $('#toDate').val('');
+      table.search('').columns().search('').draw();
+    });
+  });
+</script>
+
+
+<script>
+  $(document).ready(function () {
+    // Initialize DataTables
+    var table = $('#example').DataTable();
+
+    // DatePicker setup
+    $(".datepicker").datepicker({
+      dateFormat: 'yy-mm-dd'
+    });
+
+    // Filter by Field
+    $('#fieldFilter').on('change', function () {
+      table.column(5).search(this.value).draw();  // Column index 5 is Field
+    });
+
+    // Filter by Status
+    $('#statusFilter').on('change', function () {
+      table.column(6).search(this.value).draw();  // Column index 6 is Status
+    });
+
+    // Date range filter
+    $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {
+      var fromDate = $('#fromDate').datepicker("getDate");
+      var toDate = $('#toDate').datepicker("getDate");
+      var date = new Date(data[2]); // Column index 2 is Avg. Uptime (which we'll treat as a date in this example)
+
+      if ((fromDate === null && toDate === null) ||
+        (fromDate === null && date <= toDate) ||
+        (toDate === null && date >= fromDate) ||
+        (date >= fromDate && date <= toDate)) {
+        return true;
+      }
+      return false;
+    });
+
+    // Trigger date range filtering
+    $('#fromDate, #toDate').on('change', function () {
+      table.draw();
+    });
+
+    // Clear all filters
+    $('#clearFilters').on('click', function () {
+      $('#fieldFilter').val('');
+      $('#statusFilter').val('');
+      $('#fromDate').val('');
+      $('#toDate').val('');
+      table.search('').columns().search('').draw();
+    });
+  });
+</script>
 </body>
 
 </html>
