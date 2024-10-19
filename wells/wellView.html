@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oriental Energies | Fields</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./img/svg/logo.svg" type="image/x-icon" />
+
+    <!-- DataTables CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"
+    />
+    <!-- jQuery UI for DatePicker -->
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css"
+    />
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="../css/style.min.css" />
+    <link rel="stylesheet" href="../css/custom.css" />
+    <link rel="stylesheet" href="../facility/facility.css" />
+  </head>
+
+  <body>
+    <div class="layer"></div>
+    <!-- ! Body -->
+    <a class="skip-link sr-only" href="#skip-target">Skip to content</a>
+    <div class="page-flex">
+      <!-- ! Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-start">
+          <div class="sidebar-head">
+            <a href="/" class="logo-wrapper" title="Home">
+              <span class="sr-only">Home</span>
+              <!-- <span class="icon logo" aria-hidden="true"></span> -->
+              <img
+                src="../img/Oriental_Energy_Logo.jpg"
+                width="60px"
+                height="60px"
+                style="border-radius: 50px"
+                alt="logo"
+              />
+              <div class="logo-text">
+                <span class="logo-title">Oriental Energy</span>
+                <span class="logo-subtitle">Dashboard</span>
+              </div>
+            </a>
+            <button
+              class="sidebar-toggle transparent-btn"
+              title="Menu"
+              type="button"
+            >
+              <span class="sr-only">Toggle menu</span>
+              <span class="icon menu-toggle" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="sidebar-body">
+            <ul class="sidebar-body-menu">
+              <li>
+                <a href="../dashboard/index.html"
+                  ><span class="icon home" aria-hidden="true"></span
+                  >Dashboard</a
+                >
+              </li>
+              <li>
+                <a href="../users/index.html">
+                  <span class="icon user-3" aria-hidden="true"></span>User
+                  Managment
+                </a>
+              </li>
+              <li>
+                <a class="show-cat-btn" href="##">
+                  <span class="icon document" aria-hidden="true"></span>Field
+                  Setup
+                  <span class="category__btn transparent-btn" title="Open list">
+                    <span class="sr-only">Open list</span>
+                    <span class="icon arrow-down" aria-hidden="true"></span>
+                  </span>
+                </a>
+                <ul class="cat-sub-menu">
+                  <li>
+                    <a class="active" href="../fields/index.html">Fields</a>
+                  </li>
+                  <li>
+                    <a href="../facility/index.html">Facilities</a>
+                  </li>
+                  <li>
+                    <a href="../production/index.html">Production Platform</a>
+                  </li>
+                  <li>
+                    <a href="../wells/index.html">Wells</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a class="show-cat-btn" href="##">
+                  <span class="icon folder" aria-hidden="true"></span
+                  >Configuration
+                </a>
+              </li>
+              <li>
+                <a href="##"
+                  ><span class="icon setting" aria-hidden="true"></span>System
+                  Audit</a
+                >
+              </li>
+            </ul>
+            <!-- <span class="system-menu__title">system</span>
+            <ul class="sidebar-body-menu">
+                <li>
+                    <a href="appearance.html"><span class="icon edit" aria-hidden="true"></span>Appearance</a>
+                </li>
+                <li>
+                    <a class="show-cat-btn" href="##">
+                        <span class="icon category" aria-hidden="true"></span>Extentions
+                        <span class="category__btn transparent-btn" title="Open list">
+                            <span class="sr-only">Open list</span>
+                            <span class="icon arrow-down" aria-hidden="true"></span>
+                        </span>
+                    </a>
+                    <ul class="cat-sub-menu">
+                        <li>
+                            <a href="extention-01.html">Extentions-01</a>
+                        </li>
+                        <li>
+                            <a href="extention-02.html">Extentions-02</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="##"><span class="icon setting" aria-hidden="true"></span>System Audit</a>
+                </li>
+            </ul> -->
+          </div>
+        </div>
+        <div class="sidebar-footer">
+          <a href="##" class="sidebar-user">
+            <span class="sidebar-user-img">
+              <picture
+                ><source
+                  srcset="../img/avatar/avatar-illustrated-01.webp"
+                  type="image/webp" />
+                <img
+                  src="../img/avatar/avatar-illustrated-01.png"
+                  alt="User name"
+              /></picture>
+            </span>
+            <div class="sidebar-user-info">
+              <span class="sidebar-user__title">Nafisa Sh.</span>
+              <span class="sidebar-user__subtitle">Support manager</span>
+            </div>
+          </a>
+        </div>
+      </aside>
+      <div class="main-wrapper">
+        <!-- ! Main nav -->
+        <nav class="main-nav--bg">
+          <div class="container main-nav">
+            <div class="main-nav-start">
+              <div class="search-wrapper">
+                <i data-feather="search" aria-hidden="true"></i>
+                <input type="text" placeholder="Enter keywords ..." required />
+              </div>
+            </div>
+            <div class="main-nav-end">
+              <button
+                class="sidebar-toggle transparent-btn"
+                title="Menu"
+                type="button"
+              >
+                <span class="sr-only">Toggle menu</span>
+                <span class="icon menu-toggle--gray" aria-hidden="true"></span>
+              </button>
+              <div class="lang-switcher-wrapper">
+                <button class="lang-switcher transparent-btn" type="button">
+                  EN
+                  <i data-feather="chevron-down" aria-hidden="true"></i>
+                </button>
+                <ul class="lang-menu dropdown">
+                  <li><a href="##">English</a></li>
+                  <li><a href="##">French</a></li>
+                  <li><a href="##">Uzbek</a></li>
+                </ul>
+              </div>
+              <button
+                class="theme-switcher gray-circle-btn"
+                type="button"
+                title="Switch theme"
+              >
+                <span class="sr-only">Switch theme</span>
+                <i class="sun-icon" data-feather="sun" aria-hidden="true"></i>
+                <i class="moon-icon" data-feather="moon" aria-hidden="true"></i>
+              </button>
+              <div class="notification-wrapper">
+                <button
+                  class="gray-circle-btn dropdown-btn"
+                  title="To messages"
+                  type="button"
+                >
+                  <span class="sr-only">To messages</span>
+                  <span
+                    class="icon notification active"
+                    aria-hidden="true"
+                  ></span>
+                </button>
+                <ul class="users-item-dropdown notification-dropdown dropdown">
+                  <li>
+                    <a href="##">
+                      <div class="notification-dropdown-icon info">
+                        <i data-feather="check"></i>
+                      </div>
+                      <div class="notification-dropdown-text">
+                        <span class="notification-dropdown__title"
+                          >System just updated</span
+                        >
+                        <span class="notification-dropdown__subtitle"
+                          >The system has been successfully upgraded. Read more
+                          here.</span
+                        >
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="##">
+                      <div class="notification-dropdown-icon danger">
+                        <i data-feather="info" aria-hidden="true"></i>
+                      </div>
+                      <div class="notification-dropdown-text">
+                        <span class="notification-dropdown__title"
+                          >The cache is full!</span
+                        >
+                        <span class="notification-dropdown__subtitle"
+                          >Unnecessary caches take up a lot of memory space and
+                          interfere ...</span
+                        >
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="##">
+                      <div class="notification-dropdown-icon info">
+                        <i data-feather="check" aria-hidden="true"></i>
+                      </div>
+                      <div class="notification-dropdown-text">
+                        <span class="notification-dropdown__title"
+                          >New Subscriber here!</span
+                        >
+                        <span class="notification-dropdown__subtitle"
+                          >A new subscriber has subscribed.</span
+                        >
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="link-to-page" href="##"
+                      >Go to Notifications page</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="nav-user-wrapper">
+                <button
+                  href="##"
+                  class="nav-user-btn dropdown-btn"
+                  title="My profile"
+                  type="button"
+                >
+                  <span class="sr-only">My profile</span>
+                  <span class="nav-user-img">
+                    <picture
+                      ><source
+                        srcset="../img/avatar/avatar-illustrated-02.webp"
+                        type="image/webp" />
+                      <img
+                        src="../img/avatar/avatar-illustrated-02.png"
+                        alt="User name"
+                    /></picture>
+                  </span>
+                </button>
+                <ul class="users-item-dropdown nav-user-dropdown dropdown">
+                  <li>
+                    <a href="##">
+                      <i data-feather="user" aria-hidden="true"></i>
+                      <span>Profile</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="##">
+                      <i data-feather="settings" aria-hidden="true"></i>
+                      <span>Account settings</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="danger" href="##">
+                      <i data-feather="log-out" aria-hidden="true"></i>
+                      <span>Log out</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <main class="container main users chart-page" id="skip-target">
+          <div class="filter-section" style="display: none">
+            <label for="fieldFilter">Field:</label>
+            <select id="fieldFilter">
+              <option value="">All Fields</option>
+              <option value="Field 1">Field 1</option>
+              <option value="Field 2">Field 2</option>
+              <option value="Field 3">Field 3</option>
+            </select>
+
+            <label for="statusFilter">Status:</label>
+            <select id="statusFilter">
+              <option value="">All Statuses</option>
+              <option value="Active">Active</option>
+              <option value="Pending">Pending</option>
+            </select>
+
+            <label for="fromDate">From:</label>
+            <input
+              type="text"
+              id="fromDate"
+              class="datepicker"
+              placeholder="Select From Date"
+            />
+
+            <label for="toDate">To:</label>
+            <input
+              type="text"
+              id="toDate"
+              class="datepicker"
+              placeholder="Select To Date"
+            />
+
+            <button class="btn clear" id="clearBtn" id="clearFilters">
+              Clear <i data-feather="x" aria-hidden="true"></i>
+            </button>
+
+            <button class="btn create" id="createWellBtn">
+              Create Well <i data-feather="plus" aria-hidden="true"></i>
+            </button>
+          </div>
+          <!-- modal -->
+          <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="xClose close">&times;</span>
+              <div class="modal-header" style="padding: 10px;">
+                <h5 class="modal-title" id="filterModalLabel">Add Property</h5>
+              </div>
+              <div class="modal-body" style="padding: 10px;">
+                <!-- Search Field -->
+                <input
+                  type="text"
+                  id="modalSearch"
+                  class="form-control mb-3"
+                  placeholder="Search..."
+                />
+
+                <!-- Filter Buttons -->
+                <div id="filterButtons" class="mb-3 d-flex flex-wrap">
+                  <!-- dynamically loaded btns -->
+                </div>
+
+                <!-- Filtered Data Table -->
+                <table
+                  id="modalTable"
+                  class="table table-striped table-bordered"
+                >
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Abbreviation</th>
+                      <th>Unit</th>
+                      <th>Type</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Filtered data will be injected here -->
+                  </tbody>
+                </table>
+              </div>
+              <div class="modal-footer">
+                <button type="button" id="closeModalButton" class="cancel-btn">
+                  <p>Cancel</p>
+                  <img
+                    src="../img/svg/Bulk/Close Square.svg"
+                    alt=""
+                    srcset=""
+                  />
+                </button>
+
+                <button type="button" id="addToMainTable" class="create-btn">
+                  <p>Add</p>
+                  <img src="../img/svg/Bulk/plus.svg" alt="" srcset="" />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="viewcontainer">
+            <div class="heading">
+              <h4>Well View</h4>
+            </div>
+            <div class="view">
+              <div class="facility-name">
+                <span>Well Name:</span>
+                <div class="box small-box">vasco</div>
+              </div>
+              <div class="facility-name">
+                <span>Abbriv:</span>
+                <div class="box small-box">vasco</div>
+              </div>
+              <div class="description">
+                <span>Description:</span>
+                <div class="box large-box">
+                  Daily crude extraction reports for the last 30 days.
+                </div>
+              </div>
+              <div class="status">
+                <span>Status:</span>
+                <span class="status-text">Active</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-12 tableWrap" style="margin-top: 50px">
+            <div class="modbtn">
+              <div>
+                <p>Properties of Well</p>
+              </div>
+              <div class="btnWrap">
+                <a href="./wellLog.html">
+                  <p>Well Log</p>
+                  <img src="../img/svg/Bulk/Paper-gray.svg" alt="" srcset="" />
+                </a>
+                <button id="openModalBtn">
+                  <p>Add</p>
+                  <img src="../img/svg/Bulk/plus.svg" alt="" srcset="" />
+                </button>
+              </div>
+            </div>
+            <div class="users-table table-wrapper">
+              <!-- Table -->
+              <table class="posts-table" id="mainTable">
+                <thead>
+                  <tr class="users-table-info">
+                    <th>
+                      <label class="users-table__checkbox ms-20">
+                        <input type="checkbox" class="check-all" />S/N
+                      </label>
+                    </th>
+                    <th>Name</th>
+                    <th>Abbv</th>
+                    <th>Unit</th>
+                    <th>Type</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <label class="users-table__checkbox">
+                        <input type="checkbox" class="check" />
+                        <div class="categories-table-img">
+                          <p>1</p>
+                        </div>
+                      </label>
+                    </td>
+                    <td>Starting your traveling blog with Vasco</td>
+                    <td>
+                      <div class="pages-table-img">Jenon</div>
+                    </td>
+                    <td><span class="badge-pending">Pending</span></td>
+                    <td>17.04.2021</td>
+                    <td>
+                      <a href="#" class="view-action">View</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="users-table__checkbox">
+                        <input type="checkbox" class="check" />
+                        <div class="categories-table-img">
+                          <p>1</p>
+                        </div>
+                      </label>
+                    </td>
+                    <td>Start a blog to reach your creative peak</td>
+                    <td>
+                      <div class="pages-table-img">nette Black</div>
+                    </td>
+                    <td><span class="badge-pending">Pending</span></td>
+                    <td>23.04.2021</td>
+                    <td>
+                      <a href="#" class="view-action">View</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="users-table__checkbox">
+                        <input type="checkbox" class="check" />
+                        <div class="categories-table-img">
+                          <p>1</p>
+                        </div>
+                      </label>
+                    </td>
+                    <td>Helping a local business reinvent itself</td>
+                    <td>
+                      <div class="pages-table-img">Kaphy</div>
+                    </td>
+                    <td><span class="badge-active">Active</span></td>
+                    <td>17.04.2021</td>
+                    <td>
+                      <a href="#" class="view-action">View</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="users-table__checkbox">
+                        <input type="checkbox" class="check" />
+                        <div class="categories-table-img">
+                          <p>1</p>
+                        </div>
+                      </label>
+                    </td>
+                    <td>Caring is the new marketing</td>
+                    <td>
+                      <div class="pages-table-img">Guwkins</div>
+                    </td>
+                    <td><span class="badge-active">Active</span></td>
+                    <td>17.04.2021</td>
+                    <td>
+                      <a href="#" class="view-action">View</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="users-table__checkbox">
+                        <input type="checkbox" class="check" />
+                        <div class="categories-table-img">
+                          <p>1</p>
+                        </div>
+                      </label>
+                    </td>
+                    <td>How to build a loyal community online and offline</td>
+                    <td>
+                      <div class="pages-table-img">berox</div>
+                    </td>
+                    <td><span class="badge-active">Active</span></td>
+                    <td>17.04.2021</td>
+                    <td>
+                      <a href="#" class="view-action">View</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="users-table__checkbox">
+                        <input type="checkbox" class="check" />
+                        <div class="categories-table-img">
+                          <p>1</p>
+                        </div>
+                      </label>
+                    </td>
+                    <td>How to build a loyal community online and offline</td>
+                    <td>
+                      <div class="pages-table-img">berox</div>
+                    </td>
+                    <td><span class="badge-active">Active</span></td>
+                    <td>17.04.2021</td>
+                    <td>
+                      <a href="#" class="view-action">View</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </main>
+        <!-- ! Footer -->
+        <footer class="footer">
+          <div class="container footer--flex">
+            <div class="footer-start">
+              <p>
+                2025 © Oriental Energy -
+                <a
+                  href="https://oriental-er.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >oriental-er.com</a
+                >
+              </p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- jQuery UI for DatePicker -->
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <!-- Chart library -->
+    <script src="../plugins/chart.min.js"></script>
+    <!-- Icons library -->
+    <script src="../plugins/feather.min.js"></script>
+    <!-- Custom scripts -->
+    <script src="../js/script.js"></script>
+    <script src="../js/customScript.js"></script>
+
+    <!-- jQuery and DataTables JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <!-- jQuery UI for DatePicker -->
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // Initialize DataTables
+        var table = $("#example").DataTable();
+
+        // DatePicker setup
+        $(".datepicker").datepicker({
+          dateFormat: "yy-mm-dd",
+        });
+
+        // Filter by Field
+        $("#fieldFilter").on("change", function () {
+          table.column(5).search(this.value).draw(); // Column index 5 is Field
+        });
+
+        // Filter by Status
+        $("#statusFilter").on("change", function () {
+          table.column(6).search(this.value).draw(); // Column index 6 is Status
+        });
+
+        // Date range filter
+        $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {
+          var fromDate = $("#fromDate").datepicker("getDate");
+          var toDate = $("#toDate").datepicker("getDate");
+          var date = new Date(data[2]); // Column index 2 is Avg. Uptime (which we'll treat as a date in this example)
+
+          if (
+            (fromDate === null && toDate === null) ||
+            (fromDate === null && date <= toDate) ||
+            (toDate === null && date >= fromDate) ||
+            (date >= fromDate && date <= toDate)
+          ) {
+            return true;
+          }
+          return false;
+        });
+
+        // Trigger date range filtering
+        $("#fromDate, #toDate").on("change", function () {
+          table.draw();
+        });
+
+        // Clear all filters
+        $("#clearFilters").on("click", function () {
+          $("#fieldFilter").val("");
+          $("#statusFilter").val("");
+          $("#fromDate").val("");
+          $("#toDate").val("");
+          table.search("").columns().search("").draw();
+        });
+      });
+    </script>
+
+    <!-- ====================MODAL SCRIPT=================== -->
+    <script>
+      $(document).ready(function () {
+        // Initialize DataTables for both the main and modal tables
+        var mainTable = $("#mainTable").DataTable();
+        var modalTable = $("#modalTable").DataTable();
+        var searchFilterBtnWrap = $("#filterButtons")
+
+        var filteredData = []; // To store the data added to the modal
+        var buttonState = {}; // Track the state of each filter button
+        const data = [ {id: 1, name: "Item 1", abbr: "I1", unit: "kg", type: "Category 1" },
+                     {id: 2, name: "Item 2", abbr: "I1", unit: "kg", type: "Category 2" },
+                     {id: 3, name: "Item 3", abbr: "u1", unit: "kg", type: "Category 3" },
+                     {id: 4, name: "Item 4", abbr: "I1", unit: "kg", type: "Category 4" },
+                     {id: 5, name: "Item 5", abbr: "I8hf1", unit: "kg", type: "Category 5" },
+                     {id: 6, name: "Item 6", abbr: "I3hf", unit: "kg", type: "Category 6" },
+                     {id: 7, name: "Item 7", abbr: "I1", unit: "kg", type: "Category 7" },
+                     {id: 8, name: "Item 8", abbr: "I1", unit: "kg", type: "Category 8" },
+                    ]
+        
+          data.forEach(function (item) {
+            var searchFilterBtn = ` <button class="me-2 mb-2 filter-btn" data-filter=${item.id}>
+                                  <span class="icon">+</span> ${item.name}
+                                </button>`
+            searchFilterBtnWrap.append(searchFilterBtn)
+          })                      
+
+        // Toggle button behavior and handle data addition to the modal table
+        $(".filter-btn").click(function () {
+          var filter = $(this).data("filter");
+          var icon = $(this).find(".icon");
+          var button = $(this);
+
+          if (!buttonState[filter]) {
+            $(this).addClass("faded");
+            icon.text("x");
+            buttonState[filter] = true;
+
+            var dataToAdd = [];
+            data.forEach(function (item) {
+            if (filter === item.id) {
+              dataToAdd = [
+                { name: item.name, abbr: item.abbr, unit: item.unit, type: item.type },
+              ];
+            } 
+            })
+
+
+            dataToAdd.forEach(function (item) {
+              modalTable.row
+                .add([item.name, item.abbr, item.unit, item.type])
+                .draw(false);
+              filteredData.push(item); // Store added data
+            });
+          } else {
+            $(this).removeClass("faded");
+            icon.text("+");
+            buttonState[filter] = false;
+
+            filteredData = filteredData.filter(
+              (item) => item.type !== "Category " + filter.slice(-1)
+            );
+            modalTable.clear().draw();
+            filteredData.forEach(function (item) {
+              modalTable.row
+                .add([item.name, item.abbr, item.unit, item.type])
+                .draw(false);
+            });
+          }
+        });
+
+        // Add filtered data from the modal table to the main table
+        $("#addToMainTable").click(function () {
+          filteredData.forEach(function (item) {
+            // Generate first column (checkbox with row number)
+            var firstColumn = `
+        <label class="users-table__checkbox">
+          <input type="checkbox" class="check">
+          <div class="categories-table-img">
+            <p>${mainTable.rows().count() + 1}</p>
+          </div>
+        </label>`;
+
+            // Generate custom sixth column (action button with popover)
+            var sixthColumn = `<a href="#" class="view-action">View</a>`;
+
+            // Add row to the main table with generated first and sixth columns
+            mainTable.row
+              .add([
+                firstColumn, // First column (auto-generated checkbox with row number)
+                item.name, // Name (from modal data)
+                item.abbr, // Abbreviation (from modal data)
+                item.unit, // Unit (from modal data)
+                item.type, // Type (from modal data)
+                sixthColumn, // Sixth column (auto-generated action button with popover)
+              ])
+              .draw(false);
+          });
+
+          // Clear the modal's filtered data and modal table
+          filteredData = [];
+          modalTable.clear().draw();
+
+          // Close the modal after adding
+        
+        });
+
+        // Action button popover toggle
+        window.toggleActionMenu = function (btn) {
+          var popover = $(btn).next(".popover-menu");
+          $(".popover-menu").not(popover).hide(); // Hide other popovers
+          popover.toggle(); // Toggle this popover
+        };
+
+        // Close popover when clicking outside
+        $(document).click(function (e) {
+          if (!$(e.target).closest(".p-relative").length) {
+            $(".popover-menu").hide();
+          }
+        });
+
+        // Handle "View" link redirection
+        $(document).on("click", ".view-action", function (e) {
+          e.preventDefault();
+          window.location.href = "./facilityView.html"; // Redirect to another page
+        });
+
+ 
+      });
+    </script>
+  </body>
+</html>
