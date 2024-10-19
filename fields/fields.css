@@ -74,7 +74,7 @@
    right: 15px;
    font-size: 22px;
    cursor: pointer;
-   background-color: #11111d;
+   background-color: #19191b;
    color: azure;
    padding: 5px 10px;
    border-radius: 50%;
@@ -82,8 +82,8 @@
    transition: background-color 0.2s;
 }
 
-.close:hover {
-  
+.closeOnAdd {
+  cursor: pointer;
 }
 .darkmode .close {
    background-color: #fff;
