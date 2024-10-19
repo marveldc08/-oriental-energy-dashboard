@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oriental Energies | Wells</title>
+  <title>Oriental Energies | Platform</title>
   <!-- Favicon -->
   <link rel="shortcut icon" href="./img/svg/logo.svg" type="image/x-icon">
 
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
   <!-- Custom styles -->
   <link rel="stylesheet" href="../css/style.min.css">
-  <link rel="stylesheet" href="well_log.css">
+  <link rel="stylesheet" href="../wells/well_log.css">
   <link rel="stylesheet" href="../dashboard/dashboard.css">
 </head>
 
@@ -65,13 +65,13 @@
                             <a href="../fields/index.html">Fields</a>
                         </li>
                         <li>
-                            <a  href="../facility/index.html">Facilities</a>
+                            <a   href="../facility/index.html">Facilities</a>
                         </li>
                          <li>
-                            <a href="../platform/index.html">Production Platform</a>
+                            <a class="active" href="../platform/index.html">Production Platform</a>
                         </li>
                          <li>
-                            <a class="active" href="../wells/index.html">Wells</a>
+                            <a  href="../wells/index.html">Wells</a>
                         </li>
                     </ul>
                 </li>
@@ -230,11 +230,11 @@
   
     <main class="main users chart-page" id="skip-target">
         <div class="container">
-            <h2 class="main-title">Well Log</h2>
+            <h2 class="main-title">Platform Log</h2>
             <div class="viewcontainer">
                 <div class="view">
                     <div class="field-name">
-                        <span>Well Name:</span>
+                        <span>Platform Name:</span>
                         <div class="box small-box"> vasco
                         </div>
                     </div>
@@ -318,9 +318,9 @@
                     <div class="filter-section table-controls">
 
                         <label for="fromDate">Date Filter</label>
-                        <input type="text" id="fromDate" class="datepicker" style="width: 15%;" placeholder="Select From Date">
-
-                        <!-- <label for="toDate">To:</label>
+                        <input type="text" id="fromDate" style="width: 15%;" class="datepicker" placeholder="Select Date">
+<!-- 
+                        <label for="toDate">To:</label>
                         <input type="text" id="toDate" class="datepicker" placeholder="Select To Date"> -->
                         <button class="btn clear" id="clearFilters" style="width: 15%;">Clear Filter <i data-feather="x-circle" aria-hidden="true"></i></button>
 
@@ -694,6 +694,7 @@
     const fromDate = document.getElementById('from-date').value;
     const toDate = document.getElementById('to-date').value;
 
+    // Add logic to filter the table based on field, status, and date values
     
     
     // Example logic to filter rows based on date (modify as per actual requirements)
