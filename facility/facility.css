@@ -3,7 +3,10 @@
    width: 100%;
    display: flex;
    flex-basis: 1;
-   justify-content: end;
+   justify-content: space-between;
+}
+.modbtn div{
+   color: gray;
 }
 #openModalBtn {
    background-color: #0E7B58;
@@ -36,6 +39,7 @@
    z-index: 1;
    left: 0;
    top: 0;
+     overflow-y: scroll !important;
    width: 100%;
    height: 100%;
    background-color: rgba(0, 0, 0, 0.5);
@@ -46,7 +50,8 @@
 .modal-content {
    background-color: white;
    margin: 5% auto;
-   padding: 30px;
+   padding: 60px 30px;
+ 
    border-radius: 15px;
    width: 600px; /* Default width */
    max-width: 90%; /* Adjust width based on screen size */
@@ -67,7 +72,7 @@
 }
 
 /* Close button */
-.close {
+.xClose {
    position: absolute;
    top: 15px;
    right: 15px;
@@ -81,10 +86,7 @@
    transition: background-color 0.2s;
 }
 
-.close:hover {
-  
-}
-.darkmode .close {
+.darkmode .xClose {
    background-color: #EFF0F6;
    color: #11111d;
 }
@@ -182,6 +184,204 @@ input[type="checkbox"] {
 .cancel-btn:hover, .create-btn:hover {
    opacity: 0.8;
 }
+.heading{
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+   justify-content: flex-start;
+   align-items: center;
+   color: gray;
+   padding: 12px;
+   margin-bottom: 12px;
+}
+
+
+/* VIEW============ */
+
+.viewcontainer {
+   background-color: white;
+   border-radius: 10px;
+   padding: 30px;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   /* gap: 30px;  */
+}
+.view{
+   width:50%;
+     display: flex;
+   flex-direction: column;
+   gap: 30px; 
+}
+
+.facility-name, .description, .status {
+   display: flex;
+   align-items: center; /* Align label and box side by side */
+   gap: 20px; /* Space between label and box */
+}
+
+.facility-name span, .description span, .status span {
+   font-size: 1.1rem; /* Slightly larger text for readability */
+   color: #333;
+   font-weight: 600;
+   width: 120px; /* Set width to make labels consistent */
+}
+
+
+
+.darkmode .facility-name span, .darkmode  .description span, .darkmode  .status span {
+
+   color: #fff;
+}
+
+.box {
+   border: 2px solid #ddd; /* Softer border color */
+   border-radius: 8px; /* Rounded corners */
+   /* background-color: #f9f9f9; Soft background inside boxes */
+   transition: border-color 0.3s ease; /* Smooth hover effect */
+   flex-grow: 1; /* Boxes will take the remaining space */
+   padding: 15px;
+}
+
+.darkmode .box{
+   color: #EFF0F6;
+}
+
+
+
+.small-box {
+   height: 50px; /* Larger height for visibility */
+}
+
+.large-box {
+   height: 150px; /* Bigger description area */
+}
+
+.status-text {
+   font-size: 1rem;
+   color: green !important;
+   font-weight: 600;
+}
+
+@media (max-width: 768px) {
+   .viewcontainer {
+       padding: 20px;
+       max-width: 100%;
+   }
+
+   .facility-name, .description, .status {
+       flex-direction: column; /* Stack label and box on smaller screens */
+       align-items: flex-start;
+   }
+
+   .small-box, .large-box {
+       height: auto; /* Adjust height to content on smaller screens */
+   }
+}
+
+.btnWrap{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   width: 25%;
+}
+.btnWrap a{
+   background-color: #0E7B58;
+   color: white;
+   padding: 10px 10px;
+   border: none;
+   cursor: pointer;
+   font-size: 16px;
+   display: flex;
+   text-align: center;
+   justify-content: space-between;
+   gap: 12px;
+   border-radius: 5px;
+   font-size: 16px
+}
+/* ===========MODAL STYLE=================== */
+.faded {
+  background-color: #e9ecef;
+  color: #212529;
+}
+
+.icon {
+  margin-right: 5px;
+}
+.modal-dialog-scrollable .modal-body {
+  max-height: 400px; /* Adjust the max height as per your requirement */
+  overflow-y: auto;
+}
+
+.modal-dialog-scrollable .modal-body {
+  max-height: 400px; /* Adjust the height based on your requirement */
+  overflow-y: auto;
+}
+.modal-footer{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.action-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  /* Popover styling */
+  .popover-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .popover-menu ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  .popover-menu ul li {
+    padding: 10px;
+    text-align: left;
+  }
+
+  .popover-menu ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 14px;
+  }
+
+  .popover-menu ul li a:hover {
+    color: #0056b3;
+  }
+
+  #filterButtons button{
+   background-color: #0E7B58;
+   border-radius: 10px;
+   padding: 10px;
+   color: white;
+   margin-top: 15px;
+
+  }
+
+  #modalTable{
+   margin: 20px 0;
+  }
+
+/* =============================== */
+
 
 
 @media (max-width: 740px) {

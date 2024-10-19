@@ -15,7 +15,8 @@
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
   <!-- Custom styles -->
   <link rel="stylesheet" href="../css/style.min.css">
-  <link rel="stylesheet" href="../users/users.css">
+  <link rel="stylesheet" href="./users.css">
+  <link rel="stylesheet" href="../fields/fields.css">
 </head>
 
 <body>
@@ -67,7 +68,7 @@
                             <a href="../facility/index.html">Facilities</a>
                         </li>
                          <li>
-                            <a href="../production/index.html">Production Platform</a>
+                            <a href="../platform/index.html">Production Platform</a>
                         </li>
                          <li>
                             <a href="../wells/index.html">Wells</a>
@@ -204,6 +205,63 @@
     <main class="main users chart-page" id="skip-target">
       <div class="container">
       <h2 class="main-title">Users</h2>
+
+               <!-- Modal structure -->
+         <div id="myModal" class="modal">
+            <div class="modal-content">
+                  <!-- Close button -->
+                  <span class="close">&times;</span>
+
+                  <!-- Form Title -->
+                  <h2 class="main-title">Create New User</h2>
+
+                  <!-- Form Fields -->
+                  <form>
+             
+                    <div class="autocomplete input-group">
+                       <label for="employeeId"> Employee ID</label>
+                      <input type="text" id="autocompleteInput" placeholder="e.g ORI..." oninput="filterOptions()">
+                      <ul id="dropdownList" class="dropdown-list">
+                        <!-- List of options that will appear as dropdown -->
+                      </ul>
+                    </div>
+
+           
+                     <div class="input-group">
+                        <label for="name"> Name</label>
+                        <input type="text" id="fieldName" name="fieldName" value="John" readonly required>
+                
+                     </div>
+                     <div class="input-group">
+                        <label for="email"> Email</label>
+                        <input type="text" id="fieldName" name="fieldName" value="john@gmail.com" required>
+                     </div>
+                     <div class="input-group">
+                        <label for="email"> Role</label>
+                        <select name="role" id="role">
+                          <option value="">Select Role</option>
+                          <option value="Manager">Manager</option>
+                          <option value="Engineer 1">Engineer 1</option>
+                          <option value="Engineer 2">Engineer 2</option>
+                        </select>
+                     </div>
+
+
+
+                     <!-- Action Buttons -->
+                     <div class="button-group">
+                        <button type="button" class="cancel-btn">
+                          <p>Cancel</p>
+                          <img src="../img/svg/Bulk/Close Square.svg" alt="" srcset="">
+                        </button>
+                        <button type="submit" class="create-btn">
+                          <p>Create</p>
+                          <img src="../img/svg/Bulk/plus.svg" alt="" srcset="">
+                        </button>
+                     </div>
+                  </form>
+            </div>
+         </div>
         <div class="row tableWrap">
           <div class="col-lg-12">
 
@@ -230,7 +288,12 @@
 
                   <button class="btn clear" id="clearFilters">Clear <i data-feather="x-circle" aria-hidden="true"></i></button>
 
-                  <button class="btn create" id="createWellBtn">Create <i data-feather="plus-circle" aria-hidden="true"></i></button>
+                  <div class="modbtn">
+                      <button id="openModalBtn">
+                        <p>Create</p>
+                        <img src="../img/svg/Bulk/plus.svg" alt="" srcset="">
+                      </button>
+                  </div>
                 </div> 
 
                   <!-- Table -->
@@ -625,6 +688,8 @@
     }
   });
   </script>
+
+
 
 
 </body>

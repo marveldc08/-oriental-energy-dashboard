@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oriental Energies | Fields</title>
+  <title>Oriental Energies | Wells</title>
   <!-- Favicon -->
   <link rel="shortcut icon" href="./img/svg/logo.svg" type="image/x-icon">
 
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
   <!-- Custom styles -->
   <link rel="stylesheet" href="../css/style.min.css">
-  <link rel="stylesheet" href="facility.css">
+  <link rel="stylesheet" href="../fields/fields.css">
 </head>
 
 <body>
@@ -64,13 +64,13 @@
                             <a href="../fields/index.html">Fields</a>
                         </li>
                         <li>
-                            <a class="active" href="##">Facilities</a>
+                            <a href="../facility/index.html">Facilities</a>
                         </li>
                          <li>
                             <a href="../platform/index.html">Production Platform</a>
                         </li>
                          <li>
-                            <a href="../wells/index.html">Wells</a>
+                            <a class="active"  href="##">Wells</a>
                         </li>
                     </ul>
                 </li>
@@ -229,7 +229,9 @@
   
     <main class="main users chart-page" id="skip-target">
       <div class="container">
-        <h2 class="main-title">Facilities</h2>
+        <h2 class="main-title">Wells</h2>
+        <!-- Button to open the modal -->
+       
 
          <!-- Modal structure -->
          <div id="myModal" class="modal">
@@ -244,20 +246,9 @@
                   <form>
                      <!-- Field Name Input -->
                      <div class="input-group">
-                        <label for="fieldName">Field Name</label>
-                        <div>
-                          <input type="text" id="fieldName" name="fieldName" placeholder="Enter field name" required>
-                          <span class="error-message">Field name already exists</span>
-                        </div>
-                        <!-- <input type="checkbox" id="validateCheck">
-                        <label for="validateCheck" class="checkmark">✔</label> -->
-                     </div>
-                     <div class="input-group">
-                        <label for="fieldName">Type</label>
-                        <div>
-                          <input type="text" id="fieldName" name="fieldName" placeholder="Enter field name" required>
-                          <span class="error-message">Field name already exists</span>
-                        </div>
+                        <label for="fieldName">Well Name</label>
+                        <input type="text" id="fieldName" name="fieldName" placeholder="Enter field name" required>
+                        <span class="error-message">Field name already exists</span>
                         <!-- <input type="checkbox" id="validateCheck">
                         <label for="validateCheck" class="checkmark">✔</label> -->
                      </div>
@@ -282,53 +273,46 @@
                   </form>
             </div>
          </div>
-         <div> 
-
+        <div class="row">
           <div class="col-lg-12 tableWrap" ">
-              <div class="modbtn">
-                <div></div>
-                    <button id="openModalBtn">
-                      <p>Create</p>
-                      <img src="../img/svg/Bulk/plus.svg" alt="" srcset="">
-                    </button>
-                </div>
-              <div class="users-table table-wrapper ">
-                    <!-- Table -->
-              <table class="posts-table" id="example">
-                <thead>
-                  <tr class="users-table-info">
-                    <th>
-                      <label class="users-table__checkbox ms-20">
-                        <input type="checkbox" class="check-all">S/N
-                      </label>
-                    </th>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Status</th>
-                    <th>Date created</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
+             <div class="modbtn">
+                  <button id="openModalBtn">
+                    <p>Create</p>
+                    <img src="../img/svg/Bulk/plus.svg" alt="" srcset="">
+                  </button>
+              </div>
+            <div class="users-table table-wrapper ">
+                  <!-- Table -->
+                <table class="posts-table"  id="example">
+                  <thead>
+                    <tr class="users-table-info">
+                      <th>
+                        <label class="users-table__checkbox ms-20">
+                          <input type="checkbox" class="check-all">S/N
+                        </label>
+                      </th>
+                      <th>Name</th>
+                      <th>Status</th>
+                      <th>Number of  Wells</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
                 <tbody>
+                  
                   <tr>
                     <td>
                       <label class="users-table__checkbox">
                         <input type="checkbox" class="check">
-                        <div class="categories-table-img"> 
-                          <p>1</p>
+                        <div class="categories-table-img">
+                          <p>2</p>
                         </div>
                       </label>
                     </td>
                     <td>
-                      Starting your traveling blog with Vasco
-                    </td>
-                    <td>
-                      <div class="pages-table-img">
-                        Jenon
-                      </div>
+                       Vasco
                     </td>
                     <td><span class="badge-pending">Pending</span></td>
-                    <td>17.04.2021</td>
+                    <td>17</td>
                     <td>
                       <span class="p-relative">
                         <button class="dropdown-btn transparent-btn" type="button" title="More info">
@@ -336,30 +320,28 @@
                           <i data-feather="more-horizontal" aria-hidden="true"></i>
                         </button>
                         <ul class="users-item-dropdown dropdown">
-                          <li><a href="./facilityView.html">View</a></li>
+                          <li><a href="./wellView.html">View</a></li>
                         </ul>
                       </span>
                     </td>
+                   
                   </tr>
+                 
                   <tr>
                     <td>
                       <label class="users-table__checkbox">
                         <input type="checkbox" class="check">
                         <div class="categories-table-img">
-                          <p>1</p>
+                           <p>1</p>
                         </div>
                       </label>
                     </td>
                     <td>
-                      Start a blog to reach your creative peak
+                      peak
                     </td>
-                    <td>
-                      <div class="pages-table-img">
-                        nette Black
-                      </div>
-                    </td>
+                
                     <td><span class="badge-pending">Pending</span></td>
-                    <td>23.04.2021</td>
+                    <td>23</td>
                     <td>
                       <span class="p-relative">
                         <button class="dropdown-btn transparent-btn" type="button" title="More info">
@@ -367,7 +349,7 @@
                           <i data-feather="more-horizontal" aria-hidden="true"></i>
                         </button>
                         <ul class="users-item-dropdown dropdown">
-                          <li><a href="./facilityView.html">View</a></li>
+                          <li><a href="./wellView.html">View</a></li>
                         </ul>
                       </span>
                     </td>
@@ -377,20 +359,21 @@
                       <label class="users-table__checkbox">
                         <input type="checkbox" class="check">
                         <div class="categories-table-img">
-                          <p>1</p>
+                           <p>1</p>
                         </div>
                       </label>
                     </td>
                     <td>
-                      Helping a local business reinvent itself
+                      locelf
                     </td>
-                    <td>
+                    <!-- <td>
                       <div class="pages-table-img">
-                        Kaphy
+                        <picture><source srcset="./img/avatar/avatar-face-02.webp" type="image/webp"><img src="./img/avatar/avatar-face-02.png" alt="User Name"></picture>
+                        Kathryn Murphy
                       </div>
-                    </td>
+                    </td> -->
                     <td><span class="badge-active">Active</span></td>
-                    <td>17.04.2021</td>
+                    <td>17</td>
                     <td>
                       <span class="p-relative">
                         <button class="dropdown-btn transparent-btn" type="button" title="More info">
@@ -398,7 +381,7 @@
                           <i data-feather="more-horizontal" aria-hidden="true"></i>
                         </button>
                         <ul class="users-item-dropdown dropdown">
-                          <li><a href="./facilityView.html">View</a></li>
+                          <li><a href="./wellView.html">View</a></li>
                         </ul>
                       </span>
                     </td>
@@ -408,20 +391,21 @@
                       <label class="users-table__checkbox">
                         <input type="checkbox" class="check">
                         <div class="categories-table-img">
-                          <p>1</p>
+                           <p>1</p>
                         </div>
                       </label>
                     </td>
                     <td>
-                      Caring is the new marketing
+                      keting
                     </td>
-                    <td>
+                    <!-- <td>
                       <div class="pages-table-img">
-                        Guwkins
+                        <picture><source srcset="./img/avatar/avatar-face-05.webp" type="image/webp"><img src="./img/avatar/avatar-face-05.png" alt="User Name"></picture>
+                        Guy Hawkins
                       </div>
-                    </td>
+                    </td> -->
                     <td><span class="badge-active">Active</span></td>
-                    <td>17.04.2021</td>
+                    <td>17</td>
                     <td>
                       <span class="p-relative">
                         <button class="dropdown-btn transparent-btn" type="button" title="More info">
@@ -429,38 +413,7 @@
                           <i data-feather="more-horizontal" aria-hidden="true"></i>
                         </button>
                         <ul class="users-item-dropdown dropdown">
-                          <li><a href="./facilityView.html">View</a></li>
-                        </ul>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <label class="users-table__checkbox">
-                        <input type="checkbox" class="check">
-                        <div class="categories-table-img"> 
-                          <p>1</p>
-                        </div>
-                      </label>
-                    </td>
-                    <td>
-                      How to build a loyal community online and offline
-                    </td>
-                    <td>
-                      <div class="pages-table-img">
-                        berox
-                      </div>
-                    </td>
-                    <td><span class="badge-active">Active</span></td>
-                    <td>17.04.2021</td>
-                    <td>
-                      <span class="p-relative">
-                        <button class="dropdown-btn transparent-btn" type="button" title="More info">
-                          <div class="sr-only">More info</div>
-                          <i data-feather="more-horizontal" aria-hidden="true"></i>
-                        </button>
-                        <ul class="users-item-dropdown dropdown">
-                          <li><a href="./facilityView.html">View</a></li>
+                          <li><a href="./wellView.html">View</a></li>
                         </ul>
                       </span>
                     </td>
@@ -470,37 +423,72 @@
                       <label class="users-table__checkbox">
                         <input type="checkbox" class="check">
                         <div class="categories-table-img">
-                          <p>1</p>
+                          <p>2</p>
                         </div>
                       </label>
                     </td>
                     <td>
-                      How to build a loyal community online and offline
+                      Holine
                     </td>
-                    <td>
+                    <!-- <td>
                       <div class="pages-table-img">
-                        berox
+                        <picture><source srcset="./img/avatar/avatar-face-03.webp" type="image/webp"><img src="./img/avatar/avatar-face-03.png" alt="User Name"></picture>
+                        Robert Fox
                       </div>
-                    </td>
+                    </td> -->
                     <td><span class="badge-active">Active</span></td>
-                    <td>17.04.2021</td>
-                              <td>
+                    <td>17</td>
+                    <td>
                       <span class="p-relative">
                         <button class="dropdown-btn transparent-btn" type="button" title="More info">
                           <div class="sr-only">More info</div>
                           <i data-feather="more-horizontal" aria-hidden="true"></i>
                         </button>
                         <ul class="users-item-dropdown dropdown">
-                          <li><a href="./facilityView.html">View</a></li>
+                          <li><a href="./wellView.html">View</a></li>
+                        </ul>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label class="users-table__checkbox">
+                        <input type="checkbox" class="check">
+                        <div class="categories-table-img">
+                           <p>1</p>
+                        </div>
+                      </label>
+                    </td>
+                    <td>
+                      oil line
+                    </td>
+                    <!-- <td>
+                      <div class="pages-table-img">
+                        <picture><source srcset="./img/avatar/avatar-face-03.webp" type="image/webp"><img src="./img/avatar/avatar-face-03.png" alt="User Name"></picture>
+                        Robert Fox
+                      </div>
+                    </td> -->
+                    <td><span class="badge-active">Active</span></td>
+                    <td>17</td>
+                    <td>
+                      <span class="p-relative">
+                        <button class="dropdown-btn transparent-btn" type="button" title="More info">
+                          <div class="sr-only">More info</div>
+                          <i data-feather="more-horizontal" aria-hidden="true"></i>
+                        </button>
+                        <ul class="users-item-dropdown dropdown">
+                          <li><a href="./wellView.html">View</a></li>
                         </ul>
                       </span>
                     </td>
                   </tr>
                 </tbody>
-              </table>     
-              </div>            
-      
+              </table>       
+            </div>            
+       
           </div>
+
+        </div>
       </div>
     </main>
     <!-- ! Footer -->
@@ -520,61 +508,20 @@
 <script src="../plugins/feather.min.js"></script>
 <!-- Custom scripts -->
 <script src="../js/script.js"></script>
-
 <!-- jQuery and DataTables JS -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <!-- jQuery UI for DatePicker -->
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 
-
+<!-- clickable row -->
 <script>
-  $(document).ready(function () {
-    // Initialize DataTables
-    var table = $('#example').DataTable();
-
-    // DatePicker setup
-    $(".datepicker").datepicker({
-      dateFormat: 'yy-mm-dd'
-    });
-
-    // Filter by Field
-    $('#fieldFilter').on('change', function () {
-      table.column(5).search(this.value).draw();  // Column index 5 is Field
-    });
-
-    // Filter by Status
-    $('#statusFilter').on('change', function () {
-      table.column(6).search(this.value).draw();  // Column index 6 is Status
-    });
-
-    // Date range filter
-    $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {
-      var fromDate = $('#fromDate').datepicker("getDate");
-      var toDate = $('#toDate').datepicker("getDate");
-      var date = new Date(data[2]); // Column index 2 is Avg. Uptime (which we'll treat as a date in this example)
-
-      if ((fromDate === null && toDate === null) ||
-        (fromDate === null && date <= toDate) ||
-        (toDate === null && date >= fromDate) ||
-        (date >= fromDate && date <= toDate)) {
-        return true;
-      }
-      return false;
-    });
-
-    // Trigger date range filtering
-    $('#fromDate, #toDate').on('change', function () {
-      table.draw();
-    });
-
-    // Clear all filters
-    $('#clearFilters').on('click', function () {
-      $('#fieldFilter').val('');
-      $('#statusFilter').val('');
-      $('#fromDate').val('');
-      $('#toDate').val('');
-      table.search('').columns().search('').draw();
+  document.addEventListener('DOMContentLoaded', function() {
+    const rows = document.querySelectorAll('.clickable-row');
+    rows.forEach(row => {
+      row.addEventListener('click', function() {
+        window.location.href = this.dataset.href;
+      });
     });
   });
 </script>

@@ -637,6 +637,7 @@ document.addEventListener('DOMContentLoaded', function () {
 const modal = document.getElementById('myModal');
 const openModalBtn = document.getElementById('openModalBtn');
 const closeModal = document.getElementsByClassName('close')[0];
+const customClose = document.getElementById("addToMainTable");
 const cancelBtn = document.querySelector('.cancel-btn');
 const fieldNameInput = document.getElementById('fieldName');
 const errorMessage = document.querySelector('.error-message');
@@ -650,6 +651,9 @@ openModalBtn.onclick = function() {
 closeModal.onclick = function() {
     modal.style.display = 'none';
 }
+customClose.onclick = function () {
+  modal.style.display = "none";
+};
 
 // Close modal when "Cancel" is clicked
 cancelBtn.onclick = function() {

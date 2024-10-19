@@ -1,11 +1,109 @@
+
+.viewcontainer {
+   /* background-color: #ffffff; Card-like white background */
+   padding: 30px;
+   border-radius: 15px; /* Smooth corners */
+   /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); Soft shadow for modern look */
+   max-width: 600px;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   gap: 30px; /* Increased spacing for aesthetics */
+}
+
+.field-name,  .status {
+   display: flex;
+   align-items: center; /* Align label and box side by side */
+   gap: 20px; /* Space between label and box */
+}
+
+.description {
+   display: flex;
+   /* align-items: center; Align label and box side by side */
+   gap: 20px; /* Space between label and box */
+}
+
+.field-name span, .description span, .status span {
+   font-size: 1.1rem; /* Slightly larger text for readability */
+   color: #333;
+   font-weight: 600;
+   width: 120px; /* Set width to make labels consistent */
+}
+
+.description span{
+   
+   margin-top: 10px;
+}
+
+
+.darkmode .field-name span, .darkmode  .description span, .darkmode  .status span {
+
+   color: #fff;
+}
+
+.box {
+   border: 2px solid #ddd; /* Softer border color */
+   border-radius: 8px; /* Rounded corners */
+   /* background-color: #f9f9f9; Soft background inside boxes */
+   transition: border-color 0.3s ease; /* Smooth hover effect */
+   flex-grow: 1; /* Boxes will take the remaining space */
+   padding: 15px;
+}
+
+.darkmode .box{
+   color: #EFF0F6;
+}
+
+
+
+.small-box {
+   height: 50px; /* Larger height for visibility */
+}
+
+.large-box {
+   height: 150px; /* Bigger description area */
+}
+
+.status-text {
+   font-size: 1rem;
+   color: green !important;
+   font-weight: 600;
+}
+
+.well_log{
+   background-color: #0E7B58;
+   color: white;
+   padding: 10px 10px;
+   margin-bottom: 5px;
+   border: none;
+   cursor: pointer;
+   font-size: 16px;
+   display: flex;
+   text-align: center;
+   justify-content: space-between;
+   gap: 12px;
+   border-radius: 5px;
+   font-size: 16px;
+}
+
+.darkmode .well_log {
+   background-color: #161624;
+   color: #fff;
+}
+.well_log, p {
+   margin-top: 3px;
+}
+
+
 /* Button to open modal */
 .modbtn{
    width: 100%;
    display: flex;
    /* flex-basis: 1; */
-   justify-content: end;
-
+   justify-content: space-between;
+   align-items: center;
 }
+
 #openModalBtn {
    background-color: #0E7B58;
    color: white;
@@ -54,7 +152,7 @@
    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Modern shadow */
    position: relative;
    transition: transform 0.3s ease, opacity 0.3s ease;
-   
+   /* overflow-y: scroll; */
    /* Centering the modal using translate */
    /* top: 50%;
    left: 50%;
@@ -64,7 +162,7 @@
 
 .darkmode .modal-content{
    background-color: #11111d;
-   color: #fff;
+   color: #EFF0F6;
 }
 
 /* Close button */
@@ -74,7 +172,7 @@
    right: 15px;
    font-size: 22px;
    cursor: pointer;
-   background-color: #19191b;
+   background-color: #11111d;
    color: azure;
    padding: 5px 10px;
    border-radius: 50%;
@@ -82,14 +180,13 @@
    transition: background-color 0.2s;
 }
 
-.closeOnAdd {
-  cursor: pointer;
-}
+/* .close:hover {
+  
+} */
 .darkmode .close {
-   background-color: #fff;
+   background-color: #EFF0F6;
    color: #11111d;
 }
-
 /* Input groups styling */
 .input-group {
    margin-bottom: 15px;
@@ -107,6 +204,7 @@ input[type="text"], textarea {
    padding: 10px;
    margin-bottom: 5px;
    border-radius: 5px;
+   background-color: #EFF0F6;
    border: 1px solid #ccc;
 }
 
@@ -170,6 +268,13 @@ input[type="checkbox"] {
    font-size: 16px;
 }
 
+ .tableWrap{
+   background-color: white;
+   border-radius: 10px;
+   padding: 20px;
+   /* margin: 0 15px; */
+  }
+
 .darkmode .create-btn{
    background-color: #161624;
 }
@@ -177,14 +282,26 @@ input[type="checkbox"] {
    opacity: 0.8;
 }
 
-.tableWrap{
-   background-color: white;
-   border-radius: 10px;
-   padding: 15px;
-}
 
 @media (max-width: 740px) {
    .modbtn {
       width: 100%;
    }
+
+   .viewcontainer {
+      padding: 20px;
+      max-width: 100%;
+  }
+
+  .field-name, .description, .status {
+      flex-direction: column; /* Stack label and box on smaller screens */
+      align-items: flex-start;
+  }
+  .box{
+   /* border: none; */
+  }
+
+  .small-box, .large-box {
+      height: auto; /* Adjust height to content on smaller screens */
+  }
 }

@@ -10,6 +10,14 @@
 
 .registerWrap div{
     min-height: 100vh;
-
     padding: 0;
+}
+
+@media (max-width: 768px){
+  .registerWrap{
+    flex-direction: column;
+  }
+  #sideImg{
+    display: none;
+  }
 }

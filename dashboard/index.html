@@ -68,7 +68,7 @@
                             <a href="../facility/index.html">Facilities</a>
                         </li>
                          <li>
-                            <a href="../production/index.html">Production Platform</a>
+                            <a href="../platform/index.html">Production Platform</a>
                         </li>
                          <li>
                             <a href="../wells/index.html">Wells</a>
@@ -679,9 +679,6 @@
   document.getElementById('searchBtn').addEventListener('click', function() {
     const fromDate = document.getElementById('from-date').value;
     const toDate = document.getElementById('to-date').value;
-
-    // Add logic to filter the table based on field, status, and date values
-    console.log('Searching with From:', fromDate, 'To:', toDate);
     
     // Example logic to filter rows based on date (modify as per actual requirements)
     const rows = document.querySelectorAll('#tableBody tr');
